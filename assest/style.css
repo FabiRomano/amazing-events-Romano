@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+
+body
+{
+    background-color: bisque;
+
+}
+
+header
+{
+    background-color:rgb(167, 165, 165);
+}
+
+.flex-container{
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(40, 43, 42);
+}
+
+
+
+
+.Titulo
+{
+padding: 2rem;
+text-align: center;}
