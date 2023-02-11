@@ -164,6 +164,38 @@ table
 
 .table
 {
-    margin:2rem;
+    margin:1rem;
+    width: 97%;
     
+}
+
+
+.pasteEvent
+{
+    position: absolute;
+    display: flex;
+    margin: 30px;
+    left: 18%;
+    border: 2px solid #000;
+    width: 60%;
+    height: 60%;
+    align-items: flex-start;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+.cuadro
+{
+    display: flex;
+    border: 1px solid #000;
+    width: 40%;
+    height: 80%;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
