@@ -17,6 +17,8 @@ header
     background-color:rgb(167, 165, 165);
 }
 
+
+
 .flex-container{
     padding: 1rem;
     display: flex;
@@ -93,7 +95,7 @@ width:70%;
 .btn-secondary{
     margin-left: 60%;
     margin-top: 10%;
-    background-color: aqua;
+    background-color: rgb(194, 21, 36);
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
@@ -103,12 +105,25 @@ width:70%;
 {
 display: flex;
  width: 50%;
- border: 1px solid #000;
+ border: 2px solid #d41818;
  flex-direction: column;
     align-content: center;
     flex-wrap: wrap;
     margin-top: 4rem;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+
     
+}
+
+.form-control
+{
+  width: 90%;
+  background-color: beige;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 
 .formulario
@@ -116,4 +131,39 @@ display: flex;
     display: flex;
     justify-content: space-around;
 
+}
+
+.labelPEr
+{
+    margin: 5px;
+    padding: 5px;
+    font-size: 20px;
+    -webkit-box-shadow: 3px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 3px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+tr, td{
+    border: 2px solid #000;
+    padding: 0.3rem;
+    
+}
+th{
+    padding:0.5rem;
+    background-color: #9b9292;
+}
+
+table
+{
+    border: 3px solid #000;
+    padding: 0.3rem;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+.table
+{
+    margin:2rem;
+    
 }
