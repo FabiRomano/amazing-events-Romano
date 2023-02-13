@@ -231,3 +231,53 @@ table
     font-style: italic;
     font-weight: bold;
 }
+
+section{
+    margin: 3rem;
+
+}
+
+
+.recuadro{
+    display: flex;
+    border: 1px solid #000;
+    border-radius: 30px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #9b9292;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+.cuadro{
+    padding: 3rem;
+    margin: 3rem;
+    border: 1px solid #000;
+    border-radius: 30px;
+    background-color: rgb(175, 170, 166);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+#imgDetails{
+    border: 1px solid bisque;
+    border-radius: 20px;
+    width: 100%;
+    -webkit-box-shadow: 3px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 3px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+#unico{
+
+    border: 1px solid bisque;
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    -webkit-box-shadow: 3px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 3px 10px 5px 0px rgba(0,0,0,0.75);
+}
