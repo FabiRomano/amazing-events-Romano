@@ -31,9 +31,17 @@ header
 
 .Titulo
 {
-padding: 2rem;
-text-align: center;
+    display: flex;
+    padding: 2rem;
+    text-align: center;
+    justify-content: space-between;
 
+}
+
+.navegaPag
+{
+    font-size: 2.5rem;
+color: #000;
 }
 
 .contenedora{
