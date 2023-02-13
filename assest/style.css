@@ -20,7 +20,7 @@ header
 
 
 .flex-container{
-    padding: 1rem;
+    padding: 1.5rem;
     display: flex;
     justify-content: space-between;
     background-color: rgb(40, 43, 42);
@@ -189,13 +189,37 @@ table
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 
-.cuadro
+
+.d-flex {
+    display: flex!important;
+    flex-direction: row-reverse;
+    margin-top:1.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.estiloIcon{
+   
+    width: 60px;
+    height: 60px;
+    font-size: 2.5rem;
+    margin: 12px;
+    border-radius: 50px;
+    border: 2px solid #000;
+   
+} 
+
+.fa-brands, .fab {
+    color: #000;
+    background-color: transparent;
+    position: relative;
+    text-align: center;
+    padding-top: 6px;
+}
+
+.cohort
 {
-    display: flex;
-    border: 1px solid #000;
-    width: 40%;
-    height: 80%;
-    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    font-size:2rem;
+    font-style: italic;
+    font-weight: bold;
 }
