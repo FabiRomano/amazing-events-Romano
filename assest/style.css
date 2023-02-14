@@ -52,6 +52,15 @@ color: #000;
 
 }
 
+.logo
+{
+    width: 100px;
+}
+
+h4{
+    display: none;
+}
+
 input
 {
     margin:1rem;
