@@ -241,10 +241,7 @@ table
     font-weight: bold;
 }
 
-section{
-    margin: 3rem;
 
-}
 
 
 .recuadro{
@@ -289,4 +286,46 @@ section{
     -webkit-box-shadow: 3px 10px 5px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 3px 10px 5px 0px rgba(0,0,0,0.75);
     box-shadow: 3px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+
+/*medias querys*/
+
+@media (max-width: 785px){
+    .cont-cards{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        
+    }
+
+   .contenedora{
+    padding: 0;
+   }
+
+   .div.row{
+    display: flex;
+   }
+
+   section{
+    padding: 20px;
+    margin: 15px;
+   }
+
+   .card{
+    margin: 10px;
+   }
+
+   .form{
+position: relative;
+bottom: 20px;
+
+   }
+
+   .iconitoLupa{
+    position: absolute;
+    left: 120px;
+    top: 20px;
+    font-size: 15px;
+   }
 }
