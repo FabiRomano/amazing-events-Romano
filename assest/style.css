@@ -121,16 +121,16 @@ width:70%;
 .form-contact
 {
 display: flex;
- width: 50%;
+ width: 80%;
  border: 2px solid #d41818;
  flex-direction: column;
     align-content: center;
     flex-wrap: wrap;
-    margin-top: 4rem;
+    margin-top: 2rem;
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-
+padding-top: 30px;
     
 }
 
@@ -147,6 +147,12 @@ display: flex;
 {
     display: flex;
     justify-content: space-around;
+
+}
+
+.btnForm{
+    position: relative;
+    bottom: 30px;
 
 }
 
@@ -328,4 +334,16 @@ bottom: 20px;
     top: 20px;
     font-size: 15px;
    }
+
+   .form-contact{
+    width: 100%;
+   }
+
+   .labelPEr{
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+   }
+
+
 }
