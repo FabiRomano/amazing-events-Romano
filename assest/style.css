@@ -8,26 +8,31 @@
 
 body
 {
-    background-color: white;
+    background-color: rgba(229, 230, 231, 0.979);
 
 }
 
 header
 {
     background-color:rgb(240, 219, 219);
+    
 
 }
 
 label{
 color: #e45e7f;
-font-size: 20px;
+font-size: 15px;
 }
 
+
 .flex-container{
-    padding: 1.5rem;
+    padding: 1rem;
     display: flex;
     justify-content: space-between;
-    background-color: white;
+    background-color: rgb(58, 55, 55);
+    -webkit-box-shadow: 5px 0px 24px 10px rgba(222,25,25,0.81);
+    -moz-box-shadow: 5px 0px 24px 10px rgba(222,25,25,0.81);
+    box-shadow: 5px 0px 24px 10px rgba(222,25,25,0.81);
 }
 
 
@@ -36,19 +41,41 @@ font-size: 20px;
 .Titulo
 {
     display: flex;
-    padding: 1.5rem;
+    padding: 2rem;
+    padding-bottom: 1rem;
     text-align: center;
     justify-content: space-between;
-    color: #f12d5e;
+    color: white;
+    -webkit-text-stroke: 1.5px #f12d5e;
+
 }
 
+h1, h3{
+    color: #9c0e0e;
+    -webkit-text-stroke: 1.5px #f12d5e;
+    font-family: cursive;
+}
+
+p{
+    font-style: oblique;
+    font-size: 20px;
+    color: #9c0e0e;
+}
 
 
 .navegaPag
 {
-    font-size: 2.5rem;
+    
+font-size: 2rem;
 color: #e45e7f;
+transition: transform .5s;
 
+}
+
+.navegaPag:hover{
+    transform: scale(1.6);
+    color: rgb(58, 55, 55);
+     
 }
 
 .contenedora{
@@ -61,7 +88,8 @@ color: #e45e7f;
 
 .logo
 {
-    width: 100px;
+    width: 30%;
+    
 }
 
 h4{
@@ -76,13 +104,21 @@ input
 
 .sec-details{
     padding: 3rem;
+    border-radius: 30px;
+    -webkit-box-shadow: 5px 0px 24px 10px rgba(222,25,25,0.81);
+    -moz-box-shadow: 5px 0px 24px 10px rgba(222,25,25,0.81);
+    box-shadow: 5px 0px 24px 10px rgba(222,25,25,0.81);
 }
 
 
 #categoria
 {
-border: 2px solid #f12d5e;;
+border: 1px solid #f12d5e;;
 width:70%;
+-webkit-box-shadow: 3px 10px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 3px 10px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 3px 10px 5px 0px rgba(0,0,0,0.75);
+
 
 }
 
@@ -90,7 +126,7 @@ width:70%;
 {
     font-size: 25px;
     padding: 0.5rem;
-  
+   
 }
 
 .nav-style{
@@ -99,8 +135,26 @@ width:70%;
     border-radius: 50%;
     font-size: 15px;
     background-color:rgb(240, 219, 219);
+    transition: transform .5s;
+    -webkit-box-shadow: 3px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 3px 10px 5px 0px rgba(0,0,0,0.75);
 
 }
+
+.nav-style:hover{
+    background-color: aliceblue ;
+    transform: scale(1.1);
+
+
+}
+
+
+nav{
+margin-top: 1rem;
+font-family: cursive;
+}
+
 
 .cont-cards
 {
@@ -108,6 +162,7 @@ width:70%;
     justify-content: space-around;
     margin-top: 3rem;
     flex-wrap: wrap;
+    
 }
 
 
@@ -121,16 +176,9 @@ width:70%;
     -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     background-color:rgb(240, 219, 219);
-}
-
-.style-card{
-    transition: transform .10s;
 
 }
 
-.style-card :hover{
-    transform: scale(1.2);
-}
 
 
 .imagen-card
@@ -216,7 +264,7 @@ tr, td{
 }
 th{
     padding:0.5rem;
-    background-color: #9b9292;
+    background-color:rgb(240, 219, 219);
 }
 
 table
@@ -311,7 +359,7 @@ table
     flex-wrap: wrap;
     min-height: 85vh;
     margin: 3rem;
-    background-color: aqua;
+    background-color:rgb(240, 219, 219);
 }
 
 
