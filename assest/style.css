@@ -8,22 +8,26 @@
 
 body
 {
-    background-color: bisque;
+    background-color: white;
 
 }
 
 header
 {
-    background-color:rgb(167, 165, 165);
+    background-color:rgb(240, 219, 219);
+
 }
 
-
+label{
+color: #e45e7f;
+font-size: 20px;
+}
 
 .flex-container{
     padding: 1.5rem;
     display: flex;
     justify-content: space-between;
-    background-color: rgb(40, 43, 42);
+    background-color: white;
 }
 
 
@@ -32,16 +36,19 @@ header
 .Titulo
 {
     display: flex;
-    padding: 2rem;
+    padding: 1.5rem;
     text-align: center;
     justify-content: space-between;
-
+    color: #f12d5e;
 }
+
+
 
 .navegaPag
 {
     font-size: 2.5rem;
-color: #000;
+color: #e45e7f;
+
 }
 
 .contenedora{
@@ -64,6 +71,7 @@ h4{
 input
 {
     margin:1rem;
+    background-color:rgb(240, 219, 219);
 }
 
 .sec-details{
@@ -73,15 +81,25 @@ input
 
 #categoria
 {
-border: 1px solid #000;
+border: 2px solid #f12d5e;;
 width:70%;
 
 }
 
 .iconitoLupa
 {
-    font-size: 23px;
-    color: red;
+    font-size: 25px;
+    padding: 0.5rem;
+  
+}
+
+.nav-style{
+    border: #d41818 solid 1px;
+    margin: 0.5rem;
+    border-radius: 50%;
+    font-size: 15px;
+    background-color:rgb(240, 219, 219);
+
 }
 
 .cont-cards
@@ -89,24 +107,37 @@ width:70%;
     display: flex;
     justify-content: space-around;
     margin-top: 3rem;
+    flex-wrap: wrap;
 }
 
 
 .card
 {
     width: 18rem;
-    border: 1px solid #000;
+    border: 2px solid #f12d5e;;
     padding: 8px;
+    margin: 10px;
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    background-color:rgb(240, 219, 219);
 }
+
+.style-card{
+    transition: transform .10s;
+
+}
+
+.style-card :hover{
+    transform: scale(1.2);
+}
+
 
 .imagen-card
 {
     width: 100%;
     height: 50%;
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
     -webkit-box-shadow: 3px 10px 5px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 3px 10px 5px 0px rgba(0,0,0,0.75);
     box-shadow: 3px 10px 5px 0px rgba(0,0,0,0.75);
@@ -142,6 +173,7 @@ padding-top: 30px;
 .form-control
 {
   width: 90%;
+  margin: 2rem;
   background-color: beige;
   -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
@@ -159,6 +191,12 @@ padding-top: 30px;
     position: relative;
     bottom: 30px;
 
+}
+.form-label {
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-bottom: 0.5rem;
+    align-items: center;
 }
 
 .labelPEr
@@ -254,55 +292,39 @@ table
 
 
 
-
-.recuadro{
-    display: flex;
-    border: 1px solid #000;
-    border-radius: 30px;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    background-color: #ee3232;
-    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-    align-items: center;
-    justify-content: center;
-}    
-
-.cuadro{
-    padding: 3rem;
-    margin: 3rem;
-    border-radius: 30px;
-    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;  
-    height:50%;
-    width:50%;
-    word-wrap: break-word;
-}
-
 .imgDetails{
     border-radius: 10px;
-    -webkit-box-shadow: 3px 10px 5px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 3px 10px 5px 0px rgba(0,0,0,0.75);
-    box-shadow: 3px 10px 5px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     align-content: center;
-    padding: 3rem;
-    margin: 3rem;
+    width: 90%;
+   
+    margin-bottom: 2rem;
 }
 
 
 
-
+.sec-details{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 85vh;
+    margin: 3rem;
+    background-color: aqua;
+}
 
 
 /*medias querys*/
 
 @media (max-width: 785px){
+
+    .imrov{
+        display: flex;
+        flex-direction: column;
+
+    }
+
     .cont-cards{
         display: flex;
         flex-wrap: wrap;
@@ -328,8 +350,8 @@ table
    }
 
    .form{
-position: relative;
-bottom: 20px;
+    position: relative;
+    bottom: 20px;
 
    }
 
@@ -346,13 +368,13 @@ bottom: 20px;
 
    .labelPEr{
     font-size: 15px;
-    margin: 0;
-    padding: 0;
+    margin: 1rem;
+    padding: 2rem;
    }
 
-   #imgDetails{
+   /* #imgDetails{
     width: 100%;
-   }
+   } */
 }
 
 
