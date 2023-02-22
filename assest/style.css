@@ -20,8 +20,9 @@ header
 }
 
 label{
-color: #e45e7f;
-font-size: 15px;
+    color: #9c0e0e;
+    -webkit-text-stroke: 1px #f12d5e;
+    font-family: cursive;
 }
 
 
@@ -207,13 +208,14 @@ font-family: cursive;
 display: flex;
  width: 80%;
  border: 2px solid #d41818;
+ border-radius: 20px;
  flex-direction: column;
     align-content: center;
     flex-wrap: wrap;
     margin-top: 2rem;
-    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 5px 0px 24px 10px rgba(222,25,25,0.81);
+    -moz-box-shadow: 5px 0px 24px 10px rgba(222,25,25,0.81);
+    box-shadow: 5px 0px 24px 10px rgba(222,25,25,0.81);
 padding-top: 30px;
     
 }
@@ -222,10 +224,11 @@ padding-top: 30px;
 {
   width: 90%;
   margin: 2rem;
-  background-color: beige;
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  background-color: rgba(229, 230, 231, 0.979);
+  border: solid 1px rgba(222,25,25,0.81);
+  
+  
+ 
 }
 
 .formulario
@@ -255,7 +258,13 @@ padding-top: 30px;
     -webkit-box-shadow: 3px 10px 5px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 3px 10px 5px 0px rgba(0,0,0,0.75);
     box-shadow: 3px 10px 5px 0px rgba(0,0,0,0.75);
+    background-color:rgb(240, 219, 219);
+    border: solid 1px rgba(222,25,25,0.81);
+    border-radius: 20px;
+
 }
+
+
 
 tr, td{
     border: 2px solid #000;
@@ -330,6 +339,8 @@ table
     text-align: center;
     padding-top: 6px;
 }
+
+
 
 .cohort
 {
@@ -420,9 +431,9 @@ table
     padding: 2rem;
    }
 
-   /* #imgDetails{
-    width: 100%;
-   } */
+ 
+
+
 }
 
 
