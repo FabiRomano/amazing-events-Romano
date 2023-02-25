@@ -196,12 +196,22 @@ font-family: cursive;
 
 
 .btn-secondary{
+    width: 100px;
     margin-left: 60%;
     margin-top: 10%;
     background-color: rgb(194, 21, 36);
+    transition: background-color 2s;
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -webkit-text-stroke: 0.5px;
+}
+
+.btn-secondary:hover{
+    background-color: rgb(243, 240, 242);
+    -webkit-text-stroke: 0.5px ;
+     border:solid 1px #9c0e0e;
+     color: #d41818;
 }
 
 .form-contact
@@ -385,7 +395,16 @@ table
 
 /*medias querys*/
 
-@media (max-width: 785px){
+@media (max-width: 500px){
+
+    .logo{
+        width: 100%;
+    }
+
+    .flex-container{
+        display: flex;
+        flex-direction: column-reverse;
+    }
 
     .imrov{
         display: flex;

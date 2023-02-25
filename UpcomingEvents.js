@@ -31,7 +31,7 @@ let dataCards ={
         "category": "Concert",
         "date": "2022-01-22",
         "description": "The only concert of the most emblematic band in the world.",
-        "image": "hhttps://i.postimg.cc/XvQQr5C4/metallica-concert.jpg",
+        "image": "https://i.postimg.cc/XvQQr5C4/metallica-concert.jpg",
         "place": "Stadium",
         "price": 20,
         "capacity": 500000,
@@ -448,21 +448,36 @@ let dataCards ={
     ]
   }
 
-  // const containerCards = document.getElementById('containerHome')
-
-  // function createCard(){
-  //   let cards = ''
-  //   for (const event of arrayEvents) {
-  //       cards += `<div class="card bg-dark bg-gradient text-white mb-5" style="width: 16rem;">
-  //       <img src="${events.image}" class="card-img-top p-1" style="height: 10rem;" alt="Cinema"/>
-  //       <div class="card-body text-center">
-  //           <h5 class="card-title fw-bold">${events.name}</h5>
-  //           <p class="card-text mb-4">${events.description}</p>
-  //           <span class="me-5">Price $ ${price}</span>
-  //           <a href="#" class="btn btn-outline-light card-button">Details</a>
-  //       </div>
-  //   </div>`
-  //   }
-  //   return cards
-  // } 
-
+  const containerCards = document.getElementById(`contenedor-cards`)
+  const currentDate = dataCards.currentDate
+  
+  function traerTarjeta(data) {
+    let tarjeta = "";
+  
+    for (const event of data) {
+        if (event.date <= currentDate) {
+  
+            tarjeta +=`<div class="card">
+            <img
+              src="${event.image}"
+              class="card-img-top imagen-card"
+              alt="museum"
+            >
+            <div class="card-body">
+              <h3>${event.category}</h3>
+              <p class="card-text">
+               ${event.description}
+        
+              </p>
+              <a href="./Details.html" class="btn btn-secondary">More Info</a>
+              </div>
+            </div>`
+        }
+    }
+    return tarjeta;
+  }
+  
+  let tarjetaElement = traerTarjeta(dataCards.events);
+  
+  containerCards.innerHTML = tarjetaElement;
+  

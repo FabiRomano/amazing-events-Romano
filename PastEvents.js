@@ -31,7 +31,7 @@ let dataCards ={
         "category": "Concert",
         "date": "2022-01-22",
         "description": "The only concert of the most emblematic band in the world.",
-        "image": "hhttps://i.postimg.cc/XvQQr5C4/metallica-concert.jpg",
+        "image": "https://i.postimg.cc/XvQQr5C4/metallica-concert.jpg",
         "place": "Stadium",
         "price": 20,
         "capacity": 500000,
@@ -469,8 +469,8 @@ function traerTarjeta(data) {
              ${event.description}
       
             </p>
-            <button type="button" class="btn btn-secondary">Secondary</button>
-          </div>
+            <a href="./Details.html"  class="btn btn-secondary">More Info</a>
+            </div>
           </div>`
       }
   }
@@ -482,32 +482,3 @@ let tarjetaElement = traerTarjeta(dataCards.events);
 containerCards.innerHTML = tarjetaElement;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // tarjeta +=`<div class="card">
-    // <img
-    //   src="${event.image}"
-    //   class="card-img-top imagen-card"
-    //   alt="museum"
-    // >
-    // <div class="card-body">
-    //   <h3>${event.category}</h3>
-    //   <p class="card-text">
-    //    ${event.description}
-
-    //   </p>
-    //   <button type="button" class="btn btn-secondary">Secondary</button>
-    // </div>
-    // </div>`

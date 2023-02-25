@@ -31,7 +31,7 @@ let data ={
       "category": "Concert",
       "date": "2022-01-22",
       "description": "The only concert of the most emblematic band in the world.",
-      "image": "hhttps://i.postimg.cc/XvQQr5C4/metallica-concert.jpg",
+      "image": "https://i.postimg.cc/XvQQr5C4/metallica-concert.jpg",
       "place": "Stadium",
       "price": 20,
       "capacity": 500000,
@@ -468,7 +468,7 @@ for (const event of arrayDatos.events){
        ${event.description}
 
       </p>
-      <button type="button" class="btn btn-secondary">Secondary</button>
+      <a href="./Details.html" class="btn btn-secondary">More Info</a>
     </div>
     </div>`
 }
@@ -476,8 +476,8 @@ for (const event of arrayDatos.events){
 }
 
 let elementoTarjetas = crearTarjetas(data)
+containerCards.innerHTML = elementoTarjetas
 
- containerCards.innerHTML = elementoTarjetas
 
 
 
