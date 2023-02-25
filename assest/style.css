@@ -23,6 +23,7 @@ label{
     color: #9c0e0e;
     -webkit-text-stroke: 1px #f12d5e;
     font-family: cursive;
+    padding-top: 1rem;
 }
 
 
@@ -217,6 +218,7 @@ display: flex;
     -moz-box-shadow: 5px 0px 24px 10px rgba(222,25,25,0.81);
     box-shadow: 5px 0px 24px 10px rgba(222,25,25,0.81);
 padding-top: 30px;
+margin-top: 5rem;
     
 }
 
@@ -374,6 +376,13 @@ table
 }
 
 
+.cont-art{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+
 /*medias querys*/
 
 @media (max-width: 785px){
@@ -384,7 +393,7 @@ table
 
     }
 
-    .cont-cards{
+.cont-art{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
