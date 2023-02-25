@@ -451,11 +451,11 @@ let data ={
 
 const containerCards = document.getElementById(`cont-cards`)
 
-console.log(containerCards)
 
 
+function crearTarjetas(arrayDatos){
 let tarjetas =''
-for (const event of data.events){
+for (const event of arrayDatos.events){
   tarjetas += `<div class="card">
     <img
       src="${event.image}"
@@ -472,9 +472,12 @@ for (const event of data.events){
     </div>
     </div>`
 }
+  return tarjetas
+}
 
+let elementoTarjetas = crearTarjetas(data)
 
- containerCards.innerHTML = tarjetas
+ containerCards.innerHTML = elementoTarjetas
 
 
 

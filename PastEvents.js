@@ -448,5 +448,66 @@ let dataCards ={
     ]
   }
 
+const containerCards = document.getElementById(`container-cards`)
+const currentDate = dataCards.currentDate
+
+function traerTarjeta(data) {
+  let tarjeta = "";
+
+  for (const event of data) {
+      if (event.date > currentDate) {
+
+          tarjeta +=`<div class="card">
+          <img
+            src="${event.image}"
+            class="card-img-top imagen-card"
+            alt="museum"
+          >
+          <div class="card-body">
+            <h3>${event.category}</h3>
+            <p class="card-text">
+             ${event.description}
+      
+            </p>
+            <button type="button" class="btn btn-secondary">Secondary</button>
+          </div>
+          </div>`
+      }
+  }
+  return tarjeta;
+}
+
+let tarjetaElement = traerTarjeta(dataCards.events);
+
+containerCards.innerHTML = tarjetaElement;
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // tarjeta +=`<div class="card">
+    // <img
+    //   src="${event.image}"
+    //   class="card-img-top imagen-card"
+    //   alt="museum"
+    // >
+    // <div class="card-body">
+    //   <h3>${event.category}</h3>
+    //   <p class="card-text">
+    //    ${event.description}
+
+    //   </p>
+    //   <button type="button" class="btn btn-secondary">Secondary</button>
+    // </div>
+    // </div>`
