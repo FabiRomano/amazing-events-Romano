@@ -481,3 +481,33 @@ let dataCards ={
   
   containerCards.innerHTML = tarjetaElement;
   
+//crear un array de categoria
+const utilInfoData = Array.from(
+  dataCards.events.map((categoryData) => {
+    return categoryData.category;
+  })
+  
+);
+
+
+//quita los duplicados de array de categorias
+const categorias = utilInfoData.filter(
+  (item, index) => utilInfoData.indexOf(item) == index
+);
+
+const contenedorLabel = document.getElementById("contenedorLabel");
+
+function agregaCheck(arrayCategorias){
+  let inputCategoria = "";
+
+  for (let categoria of arrayCategorias) {
+         inputCategoria += ` 
+           <input type="checkbox" name="${categoria}" id="category" value="${categoria}">
+         <label for="category">${categoria}</label>
+  `;
+}
+return inputCategoria
+}
+
+let elementoCheckbox = agregaCheck(categorias)
+contenedorLabel.innerHTML = elementoCheckbox
