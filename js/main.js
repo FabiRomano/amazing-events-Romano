@@ -55,7 +55,7 @@ function agregaCheck(arrayCategorias){
 
 let elementoCheckbox = agregaCheck(categorias)
 conteLabel.innerHTML = elementoCheckbox
-console.log(categorias);
+
 
 
 //crear un evento que cada ves que se modifique el input de texto se cree una array que coincida el value del
@@ -72,7 +72,6 @@ buscador.addEventListener("change", () => {
   let eventosFiltrados=[]
        eventosFiltrados = dataCards.events.filter((event) => event.name.toLowerCase().includes(buscador.value.toLowerCase()) )
     
-console.log(eventosFiltrados);
      if (eventosFiltrados.length > 0) {
       containerCards.innerHTML = crearTarjetas(eventosFiltrados)
 

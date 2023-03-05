@@ -18,6 +18,13 @@ header
 
 }
 
+.lup{
+   position: relative;
+   width: 20px;
+   margin-bottom: 1rem;
+   right: 20px;
+}
+
 label{
     color: #9c0e0e;
     -webkit-text-stroke: 1px #f12d5e;
@@ -102,6 +109,16 @@ input
 {
     margin:1rem;
     background-color:rgb(240, 219, 219);
+  
+}
+
+.buscador{
+    position: relative;
+    height: 35px;
+    left: 55px;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 
 .sec-details{
