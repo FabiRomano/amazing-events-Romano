@@ -533,3 +533,5 @@ console.log(categorias);
 //crear un evento que cada ves que se modifique el input de texto se cree una array que coincida el value del
 //input de texto con el .nombre del array
 // y despues llamar a la funcion crear cards pero en ves de pasarle el data event sino pasarle el array filtrado.
+
+

@@ -464,7 +464,7 @@ let dataCards ={
               alt="museum"
             >
             <div class="card-body">
-              <h3>${event.category}</h3>
+              <h3>${event.name}</h3>
               <p class="card-text">
                ${event.description}
         
@@ -478,7 +478,6 @@ let dataCards ={
   }
   
   let tarjetaElement = traerTarjeta(dataCards.events);
-  
   containerCards.innerHTML = tarjetaElement;
   
 //crear un array de categoria
@@ -502,7 +501,7 @@ function agregaCheck(arrayCategorias){
 
   for (let categoria of arrayCategorias) {
          inputCategoria += ` 
-           <input type="checkbox" name="${categoria}" id="category" value="${categoria}">
+           <input type="checkbox"  name="${categoria}" id="${categoria}" value="${categoria}">
          <label for="category">${categoria}</label>
   `;
 }
@@ -511,3 +510,37 @@ return inputCategoria
 
 let elementoCheckbox = agregaCheck(categorias)
 contenedorLabel.innerHTML = elementoCheckbox
+
+
+
+
+//crear un evento que cada ves que se modifique el input de texto se cree una array que coincida el value del
+//input de texto con el .nombre del array
+// y despues llamar a la funcion crear cards pero en ves de pasarle el data event sino pasarle el array filtrado.
+
+
+
+
+
+//FILTRO ELEMENTOS PARA EL BUSCADOR 
+
+
+
+let buscador = document.getElementById("buscador")
+
+buscador.addEventListener("change", () => {
+  let eventosFiltrados=[]
+       eventosFiltrados = dataCards.events.filter((event) => event.name.toLowerCase().includes(buscador.value.toLowerCase()) )
+    
+
+     if (eventosFiltrados.length > 0) {
+      containerCards.innerHTML = traerTarjeta(eventosFiltrados)
+
+     }
+     else{
+      alert ("no se encuentra la info")
+      containerCards.innerHTML=traerTarjeta(dataCards.events)
+     }
+})
+
+
