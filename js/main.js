@@ -11,7 +11,7 @@ function crearTarjetas(arrayDatos) {
       alt="museum"
     >
     <div class="card-body">
-      <h3>${event.category}</h3>
+      <h3>${event.name}</h3>
       <p class="card-text">
        ${event.description}
 
@@ -28,11 +28,10 @@ containerCards.innerHTML = elementoTarjetas;
 
 
 //crear un array de categoria
-const utilInfoData = Array.from(
-  dataCards.events.map((categoryData) => {
-    return categoryData.category;
-  })
-);
+
+
+const utilInfoData = dataCards.events.map((categoryData) => categoryData.category)
+
 
 //quita los duplicados de array de categorias
 const categorias = utilInfoData.filter(
@@ -55,6 +54,19 @@ function agregaCheck(arrayCategorias){
 
 let elementoCheckbox = agregaCheck(categorias)
 conteLabel.innerHTML = elementoCheckbox
+
+
+//datos para el checkbox
+
+conteLabel.addEventListener('click', (e)=>{
+
+  const masInfoData = dataCards.events.filter((categoryData) => categoryData.category == e.target.value)
+  containerCards.innerHTML = crearTarjetas(masInfoData);
+
+  
+  console.log(e.target.value);
+})
+
 
 
 

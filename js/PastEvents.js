@@ -14,7 +14,7 @@ function traerTarjeta(data) {
             alt="museum"
           >
           <div class="card-body">
-            <h3>${event.category}</h3>
+            <h3>${event.name}</h3>
             <p class="card-text">
              ${event.description}
       
@@ -34,12 +34,8 @@ containerCards.innerHTML = tarjetaElement;
 
 
 //crear un array de categoria
-const utilInfoData = Array.from(
-  dataCards.events.map((categoryData) => {
-    return categoryData.category;
-  })
-  
-);
+
+const utilInfoData = dataCards.events.map((categoryData) => categoryData.category)
 
 
 //quita los duplicados de array de categorias
@@ -64,12 +60,23 @@ return inputCategoria
 let elementoCheckbox = agregaCheck(categorias)
 contLabel.innerHTML = elementoCheckbox
 
+//datos para el checkbox
+
+contLabel.addEventListener('change', (e)=>{
+
+  const masInfoData = dataCards.events.filter((categoryData) => categoryData.category == e.target.value)
+  containerCards.innerHTML = traerTarjeta(masInfoData);
+
+  
+  console.log(e.target.value);
+})
+
 
 //FILTRO ELEMENTOS PARA EL BUSCADOR 
 
 let buscador = document.getElementById("buscadorr")
 
-buscador.addEventListener("change", () => {
+buscador.addEventListener('change', () => {
   let eventosFiltrados=[]
        eventosFiltrados = dataCards.events.filter((event) => event.name.toLowerCase().includes(buscador.value.toLowerCase()) )
     

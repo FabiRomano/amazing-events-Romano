@@ -31,12 +31,8 @@ const containerCards = document.getElementById(`contenedor-cards`)
   containerCards.innerHTML = tarjetaElement;
   
 //crear un array de categoria
-const utilInfoData = Array.from(
-  dataCards.events.map((categoryData) => {
-    return categoryData.category;
-  })
-  
-);
+
+const utilInfoData = dataCards.events.map((categoryData) => categoryData.category)
 
 
 //quita los duplicados de array de categorias
@@ -62,6 +58,16 @@ let elementoCheckbox = agregaCheck(categorias)
 contenedorLabel.innerHTML = elementoCheckbox
 
 
+//datos para el checkbox
+
+contenedorLabel.addEventListener('change', (e)=>{
+
+  const masInfoData = dataCards.events.filter((categoryData) => categoryData.category == e.target.value)
+  containerCards.innerHTML = traerTarjeta(masInfoData);
+
+  
+  console.log(e.target.value);
+})
 
 
 //crear un evento que cada ves que se modifique el input de texto se cree una array que coincida el value del
@@ -76,7 +82,7 @@ contenedorLabel.innerHTML = elementoCheckbox
 
 let buscador = document.getElementById("buscador")
 
-buscador.addEventListener("change", () => {
+buscador.addEventListener('change', () => {
   let eventosFiltrados=[]
        eventosFiltrados = dataCards.events.filter((event) => event.name.toLowerCase().includes(buscador.value.toLowerCase()) )
     
