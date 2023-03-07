@@ -19,8 +19,8 @@ function traerTarjeta(data) {
              ${event.description}
       
             </p>
-            <a href="./Details.html"  class="btn btn-secondary">More Info</a>
-            </div>
+            <a href="./Details.html?id=${event._id}" class="btn btn-secondary">More Info</a>
+             </div>
           </div>`
       }
   }

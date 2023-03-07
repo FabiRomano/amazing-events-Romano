@@ -111,12 +111,7 @@ input
     background-color:rgb(240, 219, 219);
   
 }
-.divbus{
-    display: flex;
-    
-    justify-content: space-around;
-    flex-direction: column;
-}
+
 .buscador{
     
     height: 35px;
@@ -179,6 +174,10 @@ margin-top: 1rem;
 font-family: cursive;
 }
 
+.lupaBoton{
+    position: relative;
+    bottom:0.5rem;
+}
 
 .cont-cards
 {
@@ -288,6 +287,7 @@ margin-top: 5rem;
 
 .labelPEr
 {
+    width: 90%;
     margin: 5px;
     padding: 5px;
     font-size: 20px;
@@ -483,7 +483,9 @@ table
     padding: 2rem;
    }
 
- 
+ /* .divbus{
+    display: flex;
+ } */
 
 
 }

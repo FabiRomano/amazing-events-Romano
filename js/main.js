@@ -14,9 +14,8 @@ function crearTarjetas(arrayDatos) {
       <h3>${event.name}</h3>
       <p class="card-text">
        ${event.description}
-
       </p>
-      <a href="./Details.html?id=${event.id}" class="btn btn-secondary">More Info</a>
+      <a href="./Details.html?id=${event._id}" class="btn btn-secondary">More Info</a>
     </div>
     </div>`;
   }
@@ -58,28 +57,36 @@ conteLabel.innerHTML = elementoCheckbox
 
 //datos para el checkbox
 
+function filtraCategoria(listEven){
+    let listaFiltrada=[]
+    
 
-conteLabel.addEventListener('click', (e)=>{
- const masInfoData = dataCards.events.filter((categoryData) => categoryData.category === e.target.value)
-
-// masInfoData.forEach(masInfoData => {masInfoData += (e)});
-
-// const masInfo = masInfoData.concat(masInfoData)
-// console.log(masInfo);
-
-
-
- if ('click') {
-  containerCards.innerHTML = crearTarjetas(masInfoData) ;
+    console.log(listaFiltrada);
 
   }
+
+
+
+let masData =[]
+conteLabel.addEventListener('change', (e)=>{
+ const masInfoData = dataCards.events.filter((categoryData) => categoryData.category === e.target.value)
+console.log(masData);
+
+ if (e.target.checked) {
+  containerCards.innerHTML = crearTarjetas(masInfoData);
+
+  masData.push(e.target.value)
+
+ }
   
   else{
-    alert ("no se encuentra la info")
-    containerCards.innerHTML=crearTarjetas(dataCards.events)
-   }
+   let indice= masData.indexOf(e.target.value)
+    console.log(indice);
+    if (indice !== -1){
+      masData.splice(indice, 1)
 
-  console.log(masInfoData);
+    }
+   }
 })
 
 

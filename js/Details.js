@@ -1,14 +1,13 @@
 const queryString = location.search
-const params = new URLSearchParams("event.id")
+const params = new URLSearchParams(queryString)
 const id = params.get('id')
 
-
-let cards = dataCards.events.find(data => data.id == id)
+let cards = dataCards.events.find(data => data._id == id)
 
 const ContenedorDetails = document.getElementById('ContenedorDetails')
 
 
-ContenedorDetails.innerHTML= `<div class="col">
+ContenedorDetails.innerHTML=  `<div class="col">
                             <img div class="imgDetails"
                                     src= "${cards.image}"
                                     alt="img">
@@ -17,7 +16,12 @@ ContenedorDetails.innerHTML= `<div class="col">
                     <div class="col">
 
                         <h1>${cards.name}</h1>
-<p>${cards.description},${cards.category}</p>
+                        <h3>${cards.category}</h1>
+                        <p>Description: ${cards.description}</p>
+                        <p>Place: ${cards.place}</p>
+                        <p>Date: ${cards.date}</p>
+                        <p>Estimate: ${cards.estimate}</p>
+                        <p>Price: $${cards.price}</p>
 
  
 </div>`
@@ -25,6 +29,6 @@ ContenedorDetails.innerHTML= `<div class="col">
 
 console.log(cards)
 
-console.log("card")
+console.log(cards._id)
 
 
