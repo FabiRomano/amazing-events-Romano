@@ -114,11 +114,15 @@ input
 
 .buscador{
     
-    height: 35px;
+    height: 30px;
     left: 55px;
-    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    width: 90%;
+    border: solid 2px #f12d5e;
+    box-shadow: 3px 0px 18px 8px rgba(222,25,25,0.81);
+    color: #f12d5e;
+    margin: 2rem;
+    border-radius: 10px;
+    text-align: center;
 }
 
 .sec-details{
@@ -141,12 +145,7 @@ box-shadow: 3px 10px 5px 0px rgba(0,0,0,0.75);
 
 }
 
-.iconitoLupa
-{
-    font-size: 25px;
-    padding: 0.5rem;
-   
-}
+
 
 .nav-style{
     border: #d41818 solid 1px;
@@ -174,10 +173,7 @@ margin-top: 1rem;
 font-family: cursive;
 }
 
-.lupaBoton{
-    position: relative;
-    bottom:0.5rem;
-}
+
 
 .cont-cards
 {
@@ -220,7 +216,8 @@ font-family: cursive;
 
 .btn-secondary{
     width: 100px;
-    
+    position: relative;
+    left: 9rem;
     margin-top: 10%;
     background-color: rgb(194, 21, 36);
     transition: background-color 2s;
@@ -393,12 +390,9 @@ table
 
 .imgDetails{
     border-radius: 10px;
-    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     align-content: center;
     width: 90%;
-   
+    box-shadow: 3px 0px 18px 8px rgba(222,25,25,0.81);
     margin-bottom: 2rem;
 }
 
@@ -411,6 +405,7 @@ table
     min-height: 85vh;
     margin: 3rem;
     background-color:rgb(240, 219, 219);
+
 }
 
 
@@ -420,6 +415,36 @@ table
     justify-content: space-around;
     
 }
+
+
+.col{
+    box-shadow: 3px 0px 18px 8px rgba(222,25,25,0.81);
+    padding-top: 3rem;
+    margin: 0.3rem;
+    border-radius: 10px;
+
+}
+
+h5{
+    font-style: oblique;
+    font-size: 1rem;
+    color: #5e4040;
+    margin: 1.5rem;
+    box-shadow: 3px 0px 18px 8px rgba(222,25,25,0.81);
+    border-radius: 2px;
+    
+}
+
+h2{
+    font-style: oblique;
+    color: #5e4040;
+    margin: 1.5rem;
+    box-shadow: 3px 0px 18px 8px rgba(222,25,25,0.81);
+    border-radius: 2px;
+    
+ 
+}
+
 
 /*medias querys*/
 

@@ -62,13 +62,23 @@ contLabel.innerHTML = elementoCheckbox
 
 //datos para el checkbox
 
+let masData =[]
 contLabel.addEventListener('change', (e)=>{
+ const masInfoData = dataCards.events.filter((categoryData) =>masData.includes(categoryData.category))
+console.log(masData);
 
-  const masInfoData = dataCards.events.filter((categoryData) => categoryData.category == e.target.value)
+ if (e.target.checked) {
+  masData.push(e.target.value)
   containerCards.innerHTML = traerTarjeta(masInfoData);
+ }
+  else{
+   let indice= masData.indexOf(e.target.value)
+    console.log(indice);
+    if (indice !== -1){
+      masData.splice(indice, 1)
 
-  
-  console.log(e.target.value);
+    }
+   }
 })
 
 
@@ -76,7 +86,7 @@ contLabel.addEventListener('change', (e)=>{
 
 let buscador = document.getElementById("buscadorr")
 
-buscador.addEventListener('change', () => {
+buscador.addEventListener('search', () => {
   let eventosFiltrados=[]
        eventosFiltrados = dataCards.events.filter((event) => event.name.toLowerCase().includes(buscador.value.toLowerCase()) )
     

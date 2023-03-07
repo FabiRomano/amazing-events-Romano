@@ -27,8 +27,6 @@ containerCards.innerHTML = elementoTarjetas;
 
 
 //crear un array de categoria
-
-
 const utilInfoData = dataCards.events.map((categoryData) => categoryData.category)
 
 
@@ -54,36 +52,23 @@ function agregaCheck(arrayCategorias){
 let elementoCheckbox = agregaCheck(categorias)
 conteLabel.innerHTML = elementoCheckbox
 
-
-//datos para el checkbox
-
-function filtraCategoria(listEven){
-    let listaFiltrada=[]
-    
-
-    console.log(listaFiltrada);
-
-  }
-
-
+// filtro para el checkbox
 
 let masData =[]
 conteLabel.addEventListener('change', (e)=>{
- const masInfoData = dataCards.events.filter((categoryData) => categoryData.category === e.target.value)
+ const masInfoData = dataCards.events.filter((categoryData) =>masData.includes(categoryData.category))
 console.log(masData);
 
- if (e.target.checked) {
-  containerCards.innerHTML = crearTarjetas(masInfoData);
-
-  masData.push(e.target.value)
-
+ if(e.target.checked) {
+      masData.push(e.target.value)
+      containerCards.innerHTML = crearTarjetas(masInfoData);
  }
-  
+
   else{
-   let indice= masData.indexOf(e.target.value)
-    console.log(indice);
-    if (indice !== -1){
-      masData.splice(indice, 1)
+      let indice= masData.indexOf(e.target.value)
+        console.log(indice);
+       if (indice !== -1){
+          masData.splice(indice, 1)
 
     }
    }
@@ -94,7 +79,7 @@ console.log(masData);
 
 let buscador = document.getElementById("buscar")
 
-buscador.addEventListener('change', () => {
+buscador.addEventListener('search', () =>{
   let eventosFiltrados=[]
        eventosFiltrados = dataCards.events.filter((event) => event.name.toLowerCase().includes(buscador.value.toLowerCase()) )
     

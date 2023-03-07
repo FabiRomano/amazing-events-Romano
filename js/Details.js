@@ -15,13 +15,12 @@ ContenedorDetails.innerHTML=  `<div class="col">
                                   </div>
                     <div class="col">
 
-                        <h1>${cards.name}</h1>
-                        <h3>${cards.category}</h1>
-                        <p>Description: ${cards.description}</p>
-                        <p>Place: ${cards.place}</p>
-                        <p>Date: ${cards.date}</p>
-                        <p>Estimate: ${cards.estimate}</p>
-                        <p>Price: $${cards.price}</p>
+                       <h2>${cards.name}</h2>
+                        <h5>${cards.description}</h5>
+                        <h5>${cards.place}</h5>
+                        <h5>${cards.date}</h5>
+                        <h5>${cards.estimate}</h5>
+                        <h5>$${cards.price}</h5>
 
  
 </div>`
