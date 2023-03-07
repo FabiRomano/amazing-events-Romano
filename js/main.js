@@ -16,7 +16,7 @@ function crearTarjetas(arrayDatos) {
        ${event.description}
 
       </p>
-      <a href="./Details.html" class="btn btn-secondary">More Info</a>
+      <a href="./Details.html?id=${event.id}" class="btn btn-secondary">More Info</a>
     </div>
     </div>`;
   }
@@ -58,29 +58,36 @@ conteLabel.innerHTML = elementoCheckbox
 
 //datos para el checkbox
 
+
 conteLabel.addEventListener('click', (e)=>{
+ const masInfoData = dataCards.events.filter((categoryData) => categoryData.category === e.target.value)
 
-  const masInfoData = dataCards.events.filter((categoryData) => categoryData.category == e.target.value)
-  containerCards.innerHTML = crearTarjetas(masInfoData);
+// masInfoData.forEach(masInfoData => {masInfoData += (e)});
 
+// const masInfo = masInfoData.concat(masInfoData)
+// console.log(masInfo);
+
+
+
+ if ('click') {
+  containerCards.innerHTML = crearTarjetas(masInfoData) ;
+
+  }
   
-  console.log(e.target.value);
+  else{
+    alert ("no se encuentra la info")
+    containerCards.innerHTML=crearTarjetas(dataCards.events)
+   }
+
+  console.log(masInfoData);
 })
-
-
-
-
-//crear un evento que cada ves que se modifique el input de texto se cree una array que coincida el value del
-//input de texto con el .nombre del array
-// y despues llamar a la funcion crear cards pero en ves de pasarle el data event sino pasarle el array filtrado.
-
 
 
 //FILTRO ELEMENTOS PARA EL BUSCADOR 
 
 let buscador = document.getElementById("buscar")
 
-buscador.addEventListener("change", () => {
+buscador.addEventListener('change', () => {
   let eventosFiltrados=[]
        eventosFiltrados = dataCards.events.filter((event) => event.name.toLowerCase().includes(buscador.value.toLowerCase()) )
     

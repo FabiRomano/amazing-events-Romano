@@ -111,9 +111,14 @@ input
     background-color:rgb(240, 219, 219);
   
 }
-
+.divbus{
+    display: flex;
+    
+    justify-content: space-around;
+    flex-direction: column;
+}
 .buscador{
-    position: relative;
+    
     height: 35px;
     left: 55px;
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
@@ -216,7 +221,7 @@ font-family: cursive;
 
 .btn-secondary{
     width: 100px;
-    margin-left: 60%;
+    
     margin-top: 10%;
     background-color: rgb(194, 21, 36);
     transition: background-color 2s;
