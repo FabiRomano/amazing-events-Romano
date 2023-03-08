@@ -62,12 +62,9 @@ contenedorLabel.innerHTML = elementoCheckbox
 
 let masData =[]
 contenedorLabel.addEventListener('change', (e)=>{
- const masInfoData = dataCards.events.filter((categoryData) =>masData.includes(categoryData.category))
-console.log(masData);
 
  if (e.target.checked) {
   masData.push(e.target.value)
-  containerCards.innerHTML = traerTarjeta(masInfoData);
  }
   else{
    let indice= masData.indexOf(e.target.value)
@@ -77,6 +74,11 @@ console.log(masData);
 
     }
    }
+   const masInfoData = dataCards.events.filter((categoryData) =>masData.includes(categoryData.category))
+   console.log(masData);
+   console.log(masInfoData);
+   containerCards.innerHTML = traerTarjeta(masInfoData);
+
 })
 
 

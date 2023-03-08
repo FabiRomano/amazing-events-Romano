@@ -6,22 +6,21 @@ function traerTarjeta(data) {
 
   for (const event of data) {
       if (event.date > currentDate) {
-
-          tarjeta +=`<div class="card">
-          <img
-            src="${event.image}"
-            class="card-img-top imagen-card"
-            alt="museum"
-          >
-          <div class="card-body">
-            <h3>${event.name}</h3>
-            <p class="card-text">
-             ${event.description}
-      
-            </p>
-            <a href="./Details.html?id=${event._id}" class="btn btn-secondary">More Info</a>
-             </div>
-          </div>`
+       tarjeta +=`<div class="card">
+        <img
+          src="${event.image}"
+          class="card-img-top imagen-card"
+          alt="museum"
+        >
+        <div class="card-body">
+          <h3>${event.name}</h3>
+          <p class="card-text">
+           ${event.description}
+    
+          </p>
+          <a href="./Details.html?id=${event._id}" class="btn btn-secondary">More Info</a>
+          </div>
+        </div>`
       }
   }
   return tarjeta;
@@ -64,12 +63,9 @@ contLabel.innerHTML = elementoCheckbox
 
 let masData =[]
 contLabel.addEventListener('change', (e)=>{
- const masInfoData = dataCards.events.filter((categoryData) =>masData.includes(categoryData.category))
-console.log(masData);
 
  if (e.target.checked) {
   masData.push(e.target.value)
-  containerCards.innerHTML = traerTarjeta(masInfoData);
  }
   else{
    let indice= masData.indexOf(e.target.value)
@@ -79,6 +75,11 @@ console.log(masData);
 
     }
    }
+   const masInfoData = dataCards.events.filter((categoryData) =>masData.includes(categoryData.category))
+   console.log(masData);
+   console.log(masInfoData);
+   containerCards.innerHTML = traerTarjeta(masInfoData);
+
 })
 
 

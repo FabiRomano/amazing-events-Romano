@@ -1,4 +1,8 @@
 const containerCards = document.getElementById(`cont-cards`);
+const conteLabel = document.getElementById("conteLabel");
+let buscador = document.getElementById("buscar")
+
+
 
 
 function crearTarjetas(arrayDatos) {
@@ -35,7 +39,6 @@ const categorias = utilInfoData.filter(
   (item, index) => utilInfoData.indexOf(item) == index
 );
 
-const conteLabel = document.getElementById("conteLabel");
 
 function agregaCheck(arrayCategorias){
  let inputCategoria = "";
@@ -54,35 +57,35 @@ conteLabel.innerHTML = elementoCheckbox
 
 // filtro para el checkbox
 
-let masData =[]
+
+let masData=[]
 conteLabel.addEventListener('change', (e)=>{
+  if(e.target.checked) {
+    masData.push(e.target.value)
+}
+else{
+  let indice= masData.indexOf(e.target.value)
+    console.log(indice);
+   if (indice !== -1){
+      masData.splice(indice, 1)
+
+}
+}
  const masInfoData = dataCards.events.filter((categoryData) =>masData.includes(categoryData.category))
-console.log(masData);
-
- if(e.target.checked) {
-      masData.push(e.target.value)
-      containerCards.innerHTML = crearTarjetas(masInfoData);
- }
-
-  else{
-      let indice= masData.indexOf(e.target.value)
-        console.log(indice);
-       if (indice !== -1){
-          masData.splice(indice, 1)
-
-    }
-   }
+ console.log(masInfoData);
+ console.log(masData);
+   containerCards.innerHTML = crearTarjetas(masInfoData);
 })
 
 
 //FILTRO ELEMENTOS PARA EL BUSCADOR 
 
-let buscador = document.getElementById("buscar")
 
 buscador.addEventListener('search', () =>{
   let eventosFiltrados=[]
        eventosFiltrados = dataCards.events.filter((event) => event.name.toLowerCase().includes(buscador.value.toLowerCase()) )
-    
+
+
      if (eventosFiltrados.length > 0) {
       containerCards.innerHTML = crearTarjetas(eventosFiltrados)
 

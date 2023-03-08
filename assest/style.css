@@ -91,7 +91,6 @@ transition: transform .5s;
     
         display: flex;
         flex-direction: column;
-        text-align: center;   
 
 }
 
@@ -429,7 +428,7 @@ h5{
     font-style: oblique;
     font-size: 1rem;
     color: #5e4040;
-    margin: 1.5rem;
+    margin: 2rem;
     box-shadow: 3px 0px 18px 8px rgba(222,25,25,0.81);
     border-radius: 2px;
     
@@ -441,9 +440,11 @@ h2{
     margin: 1.5rem;
     box-shadow: 3px 0px 18px 8px rgba(222,25,25,0.81);
     border-radius: 2px;
-    
+    margin: 2rem;
+
  
 }
+
 
 
 /*medias querys*/
@@ -494,13 +495,6 @@ h2{
     position: relative;
     bottom: 20px;
 
-   }
-
-   .iconitoLupa{
-    position: absolute;
-    left: 120px;
-    top: 20px;
-    font-size: 15px;
    }
 
    .form-contact{
