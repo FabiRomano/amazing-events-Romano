@@ -468,3 +468,5 @@ let dataCards = {
       },
     ],
   };
+
+  let totalData= dataCards.events

@@ -17,6 +17,9 @@ function crearTarjetas(arrayDatos) {
     <div class="card-body">
       <h3>${event.name}</h3>
       <p class="card-text">
+      ${event.category}
+     </p>
+      <p class="card-text">
        ${event.description}
       </p>
       <a href="./Details.html?id=${event._id}" class="btn btn-secondary">More Info</a>
@@ -25,9 +28,6 @@ function crearTarjetas(arrayDatos) {
   }
   return tarjetas;
 }
-
-let elementoTarjetas = crearTarjetas(dataCards.events);
-containerCards.innerHTML = elementoTarjetas;
 
 
 //crear un array de categoria
@@ -57,41 +57,67 @@ conteLabel.innerHTML = elementoCheckbox
 
 // filtro para el checkbox
 
-
 let masData=[]
+
+
 conteLabel.addEventListener('change', (e)=>{
   if(e.target.checked) {
     masData.push(e.target.value)
 }
 else{
   let indice= masData.indexOf(e.target.value)
-    console.log(indice);
    if (indice !== -1){
       masData.splice(indice, 1)
 
-}
-}
- const masInfoData = dataCards.events.filter((categoryData) =>masData.includes(categoryData.category))
- console.log(masInfoData);
- console.log(masData);
-   containerCards.innerHTML = crearTarjetas(masInfoData);
+
+   }
+
+  }
+  console.log(masInfoData);
+ searchCards();
 })
+
 
 
 //FILTRO ELEMENTOS PARA EL BUSCADOR 
 
+let escuchador=""
+let eventosFiltrados=[]
+buscador.addEventListener('keyup', (e) =>{
+       escuchador=e.target.value.toLowerCase()
+       searchCards()
 
-buscador.addEventListener('search', () =>{
-  let eventosFiltrados=[]
-       eventosFiltrados = dataCards.events.filter((event) => event.name.toLowerCase().includes(buscador.value.toLowerCase()) )
-
-
-     if (eventosFiltrados.length > 0) {
-      containerCards.innerHTML = crearTarjetas(eventosFiltrados)
-
-     }
-     else{
-      alert ("no se encuentra la info")
-      containerCards.innerHTML=crearTarjetas(dataCards.events)
-     }
 })
+
+
+// cruze de datos
+
+
+ function searchCards(){
+  eventosFiltrados = totalData.filter((event) => event.name.toLowerCase().includes(buscador.value.toLowerCase()) )
+
+console.log(eventosFiltrados);
+
+
+if (eventosFiltrados.length > 0){
+  containerCards.innerHTML = crearTarjetas(eventosFiltrados);
+  let buscadorControl=eventosFiltrados.filter(data => data.category.includes(masData.toString()))
+  containerCards.innerHTML=crearTarjetas(buscadorControl)
+
+console.log(buscadorControl);
+
+}else if (eventosFiltrados == 0){
+  containerCards.innerHTML = elementoTarjetas;
+}
+
+
+}  
+
+let masInfoData = totalData.filter((categoryData) =>masData.includes(categoryData.category))
+
+searchCards()
+
+// FILTRA LOS DATOS POR CADA EVENTO DEL BUSCADOR
+// eventosFiltrados = dataCards.events.filter((event) => event.name.toLowerCase().includes(buscador.value.toLowerCase()) )
+// FILTRA LOS DATOS POR CADA EVENTO DEL CHECKBOX
+// const masInfoData = dataCards.events.filter((categoryData) =>masData.includes(categoryData.category))
