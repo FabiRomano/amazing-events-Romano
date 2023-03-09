@@ -3,8 +3,6 @@ const conteLabel = document.getElementById("conteLabel");
 let buscador = document.getElementById("buscar")
 
 
-
-
 function crearTarjetas(arrayDatos) {
   let tarjetas = "";
   for (const event of arrayDatos) {
@@ -73,7 +71,6 @@ else{
    }
 
   }
-  console.log(masInfoData);
  searchCards();
 })
 
@@ -106,9 +103,10 @@ if (eventosFiltrados.length > 0){
 
 console.log(buscadorControl);
 
-}else if (eventosFiltrados == 0){
-  containerCards.innerHTML = elementoTarjetas;
-}
+    }else if (eventosFiltrados == 0){
+      containerCards.innerHTML = elementoTarjetas;
+      } 
+    
 
 
 }  

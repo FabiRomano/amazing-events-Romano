@@ -1,5 +1,7 @@
 const containerCards = document.getElementById(`container-cards`)
 const currentDate = dataCards.currentDate
+let buscador = document.getElementById("buscadorr")
+
 
 function traerTarjeta(data) {
   let tarjeta = "";
@@ -85,7 +87,6 @@ contLabel.addEventListener('change', (e)=>{
 
 //FILTRO ELEMENTOS PARA EL BUSCADOR 
 
-let buscador = document.getElementById("buscadorr")
 
 buscador.addEventListener('search', () => {
   let eventosFiltrados=[]
