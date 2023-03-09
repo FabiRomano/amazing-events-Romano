@@ -28,7 +28,6 @@ header
 label{
     color: #9c0e0e;
     -webkit-text-stroke: 1px #f12d5e;
-    font-family: cursive;
     padding-top: 1rem;
 }
 
@@ -90,7 +89,7 @@ transition: transform .5s;
 .contenedora{
     
         display: flex;
-        flex-direction: column;
+      justify-content: flex-end;
 
 }
 
@@ -106,7 +105,7 @@ h4{
 
 input
 {
-    margin:1rem;
+    margin:2rem;
     background-color:rgb(240, 219, 219);
   
 }
@@ -507,7 +506,20 @@ h2{
     padding: 2rem;
    }
 
+.row{
+    display: flex;
+    flex-direction: column;
+}
 
+h2 h5{
+    font-family: cursive;
+    color: #5e4040;
+    margin: 1rem;
+    border-radius: 2px;
+    margin: 2rem;
+    box-shadow: 0px 0px 8px 4px rgba(222,25,25,0.81);
+
+}
 
 }
 

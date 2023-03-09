@@ -28,9 +28,9 @@ function traerTarjeta(data) {
   return tarjeta;
 }
 
-let tarjetaElement = traerTarjeta(dataCards.events);
+// let tarjetaElement = traerTarjeta(dataCards.events);
 
-containerCards.innerHTML = tarjetaElement;
+// containerCards.innerHTML = tarjetaElement;
 
 
 
@@ -77,10 +77,13 @@ contLabel.addEventListener('change', (e)=>{
 
     }
    }
-   const masInfoData = dataCards.events.filter((categoryData) =>masData.includes(categoryData.category))
-   console.log(masData);
-   console.log(masInfoData);
-   containerCards.innerHTML = traerTarjeta(masInfoData);
+
+   searchCards()
+
+  //  const masInfoData = dataCards.events.filter((categoryData) =>masData.includes(categoryData.category))
+  //  console.log(masData);
+  //  console.log(masInfoData);
+  //  containerCards.innerHTML = traerTarjeta(masInfoData);
 
 })
 
@@ -88,17 +91,38 @@ contLabel.addEventListener('change', (e)=>{
 //FILTRO ELEMENTOS PARA EL BUSCADOR 
 
 
-buscador.addEventListener('search', () => {
-  let eventosFiltrados=[]
-       eventosFiltrados = dataCards.events.filter((event) => event.name.toLowerCase().includes(buscador.value.toLowerCase()) )
+let escuchador=""
+let eventosFiltrados=[]
+buscador.addEventListener('keyup', (e) =>{
+       escuchador=e.target.value.toLowerCase()
+       searchCards()
+
+})
+
+
+//cruze de datos
+
+function searchCards(){
+  eventosFiltrados = totalData.filter((event) => event.name.toLowerCase().includes(buscador.value.toLowerCase()) )
+
+console.log(eventosFiltrados);
+
+
+if (eventosFiltrados.length > 0){
+  containerCards.innerHTML = traerTarjeta(eventosFiltrados);
+  let buscadorControl=eventosFiltrados.filter(data => data.category.includes(masData.toString()))
+  containerCards.innerHTML=traerTarjeta(buscadorControl)
+
+console.log(buscadorControl);
+
+    }else if (eventosFiltrados == 0){
+      containerCards.innerHTML = elementoTarjetas;
+      } 
     
 
-     if (eventosFiltrados.length > 0) {
-      containerCards.innerHTML = traerTarjeta(eventosFiltrados)
 
-     }
-     else{
-      alert ("no se encuentra la info")
-      containerCards.innerHTML=traerTarjeta(dataCards.events)
-     }
-})
+}  
+
+let masInfoData = totalData.filter((categoryData) =>masData.includes(categoryData.category))
+
+searchCards()

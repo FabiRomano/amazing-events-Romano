@@ -57,7 +57,6 @@ conteLabel.innerHTML = elementoCheckbox
 
 let masData=[]
 
-
 conteLabel.addEventListener('change', (e)=>{
   if(e.target.checked) {
     masData.push(e.target.value)
@@ -80,7 +79,7 @@ else{
 
 let escuchador=""
 let eventosFiltrados=[]
-buscador.addEventListener('keyup', (e) =>{
+buscador.addEventListener('search', (e) =>{
        escuchador=e.target.value.toLowerCase()
        searchCards()
 
@@ -101,12 +100,12 @@ if (eventosFiltrados.length > 0){
   let buscadorControl=eventosFiltrados.filter(data => data.category.includes(masData.toString()))
   containerCards.innerHTML=crearTarjetas(buscadorControl)
 
-console.log(buscadorControl);
+// console.log(buscadorControl);
 
     }else if (eventosFiltrados == 0){
       containerCards.innerHTML = elementoTarjetas;
-      } 
-    
+     }
+     
 
 
 }  
