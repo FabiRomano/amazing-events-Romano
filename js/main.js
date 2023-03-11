@@ -61,7 +61,7 @@ conteLabel.addEventListener('change', (e)=>{
   if(e.target.checked) {
     masData.push(e.target.value)
 }
-else{
+else {
   let indice= masData.indexOf(e.target.value)
    if (indice !== -1){
       masData.splice(indice, 1)
@@ -79,7 +79,7 @@ else{
 
 let escuchador=""
 let eventosFiltrados=[]
-buscador.addEventListener('search', (e) =>{
+buscador.addEventListener('keyup', (e) =>{
        escuchador=e.target.value.toLowerCase()
        searchCards()
 
@@ -91,8 +91,9 @@ buscador.addEventListener('search', (e) =>{
 
  function searchCards(){
   eventosFiltrados = totalData.filter((event) => event.name.toLowerCase().includes(buscador.value.toLowerCase()) )
+  let masInfoData = totalData.filter((categoryData) =>masData.includes(categoryData.category))
 
-console.log(eventosFiltrados);
+console.log(masInfoData);
 
 
 if (eventosFiltrados.length > 0){
@@ -102,15 +103,27 @@ if (eventosFiltrados.length > 0){
 
 // console.log(buscadorControl);
 
-    }else if (eventosFiltrados == 0){
-      containerCards.innerHTML = elementoTarjetas;
-     }
+    }
+    
+    
+else if (eventosFiltrados == 0){
+  containerCards.innerHTML ='<div class="contNoHayResult"><img class="noHayResut" src="./assest/img/AmazingNotFound.png" alt="image"><h3>Not Found</h3></div>';
+                                 
+
+   }
+
      
+ if(masInfoData.length > 0){
+      containerCards.innerHTML = crearTarjetas(masInfoData);
+    
+      let megaFiltro = masInfoData.filter(mdata => mdata.name.toLowerCase().includes(buscador.value.toString()));
+      containerCards.innerHTML = crearTarjetas(megaFiltro);    
 
-
-}  
-
-let masInfoData = totalData.filter((categoryData) =>masData.includes(categoryData.category))
+    }
+ 
+    
+  }  
+  
 
 searchCards()
 

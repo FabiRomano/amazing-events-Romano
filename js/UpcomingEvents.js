@@ -16,6 +16,8 @@ let buscador = document.getElementById("buscador")
               alt="museum"
             >
             <div class="card-body">
+            <p class="card-text">
+            ${event.category}
               <h3>${event.name}</h3>
               <p class="card-text">
                ${event.description}
@@ -82,10 +84,7 @@ contenedorLabel.addEventListener('change', (e)=>{
    }
 
    searchCards()
-  //  const masInfoData = dataCards.events.filter((categoryData) =>masData.includes(categoryData.category))
-  //  console.log(masData);
-  //  console.log(masInfoData);
-  //  containerCards.innerHTML = traerTarjeta(masInfoData);
+ 
 
 })
 
@@ -106,8 +105,8 @@ buscador.addEventListener('keyup', (e) =>{
 
 function searchCards(){
   eventosFiltrados = totalData.filter((event) => event.name.toLowerCase().includes(buscador.value.toLowerCase()) )
+  let masInfoData = totalData.filter((categoryData) =>masData.includes(categoryData.category))
 
-console.log(eventosFiltrados);
 
 
 if (eventosFiltrados.length > 0){
@@ -118,14 +117,21 @@ if (eventosFiltrados.length > 0){
 console.log(buscadorControl);
 
     }else if (eventosFiltrados == 0){
-      containerCards.innerHTML = elementoTarjetas;
-      } 
-    
+      containerCards.innerHTML ='<div class="contNoHayResult"><img class="noHayResut" src="./assest/img/AmazingNotFound.png" alt="image"><h3>Not Found</h3></div>';
 
+    } 
+    
+   
+      if(masInfoData.length > 0){
+        containerCards.innerHTML = traerTarjeta(masInfoData);
+      
+        let megaFiltro = masInfoData.filter(mdata => mdata.name.toLowerCase().includes(buscador.value.toString()));
+        containerCards.innerHTML = traerTarjeta(megaFiltro);    
+  
+      }
 
 }  
 
-let masInfoData = totalData.filter((categoryData) =>masData.includes(categoryData.category))
 
 searchCards()
 

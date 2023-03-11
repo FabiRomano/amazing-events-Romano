@@ -444,6 +444,16 @@ h2{
  
 }
 
+.contNoHayResult{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    flex-direction: column;
+}
+
+.noHayResut{
+    width: 30%;
+}
 
 
 /*medias querys*/
