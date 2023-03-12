@@ -472,37 +472,3 @@
 //   let totalData= dataCards.events
 
 
-
-// let totalData='https://mindhub-xj03.onrender.com/api/amazing'
-// fetch(totalData)
-
-// .then(response =>  console.log(response))
-// .then(response => response.json())
-// .then(datos =>{ console.log(datos);
-//                 console.log(datos.currentDate);
-//                 console.log(datos.events);
-//                 console.log(datos.events[2]);
-//                 console.log(datos.events[2].name)
-// })
-
-// async function traerDatos(){
-//   try{
-//       const response = await fetch(totalData)
-//       console.log(response)
-//       const datos = await response.json()
-//       console.log(datos.events)
-//   }
-//   catch(error){
-//     console.log(error);
-//   }
-// }
-
-// traerDatos()
-
-// let totalData='https://mindhub-xj03.onrender.com/api/amazing'
-// fetch(totalData)
-// .then(response =>  console.log(response))
-// .then(dato => {     
-//   let totalData = dato.events     
- 
-//   })

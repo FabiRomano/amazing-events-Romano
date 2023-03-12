@@ -1,5 +1,14 @@
+let totalData='https://mindhub-xj03.onrender.com/api/amazing'
+fetch(totalData)
+.then(response => response.json())
+.then(datos => {     
+  let totalData = datos    
+ 
+console.log(totalData);
+
+
 const containerCards = document.getElementById(`container-cards`)
-const currentDate = dataCards.currentDate
+const currentDate = totalData.currentDate
 let buscador = document.getElementById("buscadorr")
 
 
@@ -39,7 +48,7 @@ function traerTarjeta(data) {
 
 //crear un array de categoria
 
-const utilInfoData = dataCards.events.map((categoryData) => categoryData.category)
+const utilInfoData = totalData.events.map((categoryData) => categoryData.category)
 
 
 //quita los duplicados de array de categorias
@@ -103,8 +112,8 @@ buscador.addEventListener('keyup', (e) =>{
 //cruze de datos
 
 function searchCards(){
-  eventosFiltrados = totalData.filter((event) => event.name.toLowerCase().includes(buscador.value.toLowerCase()) )
-  let masInfoData = totalData.filter((categoryData) =>masData.includes(categoryData.category))
+  eventosFiltrados = totalData.events.filter((event) => event.name.toLowerCase().includes(buscador.value.toLowerCase()) )
+  let masInfoData = totalData.events.filter((categoryData) =>masData.includes(categoryData.category))
 
 
 
@@ -133,3 +142,5 @@ console.log(buscadorControl);
 
 
 searchCards()
+
+})
