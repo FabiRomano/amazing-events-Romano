@@ -1,3 +1,11 @@
+let totalData='https://mindhub-xj03.onrender.com/api/amazing'
+fetch(totalData)
+.then(response =>  console.log(response))
+.then(dato => {     
+  let totalData = dato    
+ 
+
+
 const containerCards = document.getElementById(`cont-cards`);
 const conteLabel = document.getElementById("conteLabel");
 let buscador = document.getElementById("buscar")
@@ -69,6 +77,7 @@ else {
 
    }
 
+   
   }
  searchCards();
 })
@@ -87,7 +96,7 @@ buscador.addEventListener('keyup', (e) =>{
 
 
 // cruze de datos
-
+let megaFiltro =[]
 
  function searchCards(){
   eventosFiltrados = totalData.filter((event) => event.name.toLowerCase().includes(buscador.value.toLowerCase()) )
@@ -116,18 +125,17 @@ else if (eventosFiltrados == 0){
  if(masInfoData.length > 0){
       containerCards.innerHTML = crearTarjetas(masInfoData);
     
-      let megaFiltro = masInfoData.filter(mdata => mdata.name.toLowerCase().includes(buscador.value.toString()));
+     megaFiltro = masInfoData.filter(mdata => mdata.name.toLowerCase().includes(buscador.value.toString()));
       containerCards.innerHTML = crearTarjetas(megaFiltro);    
 
     }
- 
-    
-  }  
+
+
+}
   
 
 searchCards()
 
-// FILTRA LOS DATOS POR CADA EVENTO DEL BUSCADOR
-// eventosFiltrados = dataCards.events.filter((event) => event.name.toLowerCase().includes(buscador.value.toLowerCase()) )
-// FILTRA LOS DATOS POR CADA EVENTO DEL CHECKBOX
-// const masInfoData = dataCards.events.filter((categoryData) =>masData.includes(categoryData.category))
+
+})
+
