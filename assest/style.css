@@ -456,6 +456,12 @@ h2{
 }
 
 
+
+.estyleSub{
+    font-style: italic;
+    font-weight: bold;
+}
+
 /*medias querys*/
 
 @media (max-width: 500px){

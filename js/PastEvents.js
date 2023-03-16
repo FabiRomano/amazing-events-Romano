@@ -16,7 +16,7 @@ function traerTarjeta(data) {
   let tarjeta = "";
 
   for (const event of data) {
-      if (event.date > currentDate) {
+      if (event.date < currentDate) {
        tarjeta +=`<div class="card">
         <img
           src="${event.image}"

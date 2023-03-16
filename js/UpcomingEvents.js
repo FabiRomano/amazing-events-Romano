@@ -16,7 +16,7 @@ let buscador = document.getElementById("buscador")
     let tarjeta = "";
   
     for (const event of data) {
-        if (event.date <= currentDate) {
+        if (event.date >= currentDate) {
   
             tarjeta +=`<div class="card">
             <img

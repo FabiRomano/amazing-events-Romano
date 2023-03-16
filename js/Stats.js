@@ -1,7 +1,6 @@
 let totalData='https://mindhub-xj03.onrender.com/api/amazing'
 const containerTable = document.getElementById ("containerTable")
 
-
 fetch(totalData)
 .then(response => response.json())
 .then(datos => {     
@@ -39,10 +38,13 @@ console.log(tresUltimos);
     const capacidadOrden = events.sort((a,b) => a.capacity - b.capacity).map(filtAsisP => {return `${filtAsisP.name}: ${filtAsisP.capacity}`})
 console.log(capacidadOrden);
 
-const granCapacity = capacidadOrden.slice(-2)
+const granCapacity = capacidadOrden.slice(-3)
 console.log(granCapacity);
 
 
+
+
+ //segunda tabla
 //FILTROS Y MAPEOS DE LOS EVENTOS CON "ESTIMATE"
 //Filtro los eventos con la una estimacion de asistencia
 let estimateFilter = events.filter(esti => esti.estimate != undefined).map(estimateFilter =>{return{
@@ -51,25 +53,60 @@ let estimateFilter = events.filter(esti => esti.estimate != undefined).map(estim
   category:estimateFilter.category,
   estimate: estimateFilter.estimate,
   capacity: estimateFilter.capacity,
+  price: estimateFilter.price,
+  total: estimateFilter.price * estimateFilter.estimate,
   percentage: Math.round((estimateFilter.estimate / estimateFilter.capacity ) * 100)
-}})
+}} )
+
  console.log("todos los eventos futuros:", estimateFilter);
 
 
 
+// let totalPorCategory=0
+// estimateFilter.forEach(event=> {if( event.category == "Museum"){
+//                             totalPorCategory +=  event.total
+//                             console.log(totalPorCategory);
+
+// }
+// });
+
+function sumaPorCategory(category) {
+  let totalPorCategory=0
+estimateFilter.forEach(event=> {if( event.category == category){
+                            totalPorCategory +=  event.total
+                            console.log(totalPorCategory);
+
+}
+});
+return totalPorCategory  
+}
+
+let arraySumas=[]
+
+function sumaTodasCate() {
+  categorias.forEach(categoria => { 
+    arraySumas.push(sumaPorCategory(categoria))
+  })
+  
+}
 
 
- //segunda tabla
+//mapeo las categorias de todos los eventos y saco las repetidas
+  let mapCategorias = estimateFilter.map((cat) => cat.category)
+  console.log(mapCategorias);
+  const categorias = mapCategorias.filter(
+    (item, index) => mapCategorias.indexOf(item) == index
+  )
+      console.log(categorias);
+
+sumaTodasCate()
+console.log("suma de array", arraySumas);
+console.log("estee", categorias);
+
+
   // Esta constante ordena de mayor a menor porcentaje y guarda solo los datos utiles
-  const ordEstimate = estimateFilter.sort((a,b) => a.estimate - b.estimate).map(estimateFilter => {return `${estimateFilter.category}: ${estimateFilter.percentage}%`})
-  console.log(ordEstimate);
-   const maxEstimate = ordEstimate.filter(
-    (item, index) => ordEstimate.indexOf(item) !== index
-  );
-       console.log(maxEstimate);
-
-
-
+  const catPreciEstimate = estimateFilter.sort((a,b) => a.estimate - b.estimate).map(estimateFilter => {return `${estimateFilter.category}: ${estimateFilter.price}$`})
+  console.log(catPreciEstimate);
 
 
 
@@ -83,14 +120,14 @@ function infoTable() {
 </thead>
 <tbody>
   <tr>
-    <td>Events with the highest persentage of aftendancen</td>
-    <td>Events with the lowest persentage of aftendancen</td>
-    <td>Events with large capacity</td>
+    <td class="estyleSub">Events with the highest persentage of aftendancen</td>
+    <td class="estyleSub">Events with the lowest persentage of aftendancen</td>
+    <td class="estyleSub">Events with large capacity</td>
   </tr>
   <tr>
     <td>${ordenAsis[0]}</td>
     <td>${tresUltimos[0]}</td>
-    <td>${granCapacity[0]}</td>
+    <td>${granCapacity[2]}</td>
   </tr>
 
   <tr>
@@ -102,6 +139,8 @@ function infoTable() {
 <tr>
 <td>${ordenAsis[2]}</td>
 <td>${tresUltimos[2]}</td>
+<td>${granCapacity[0]}</td>
+
 <td>.</td>
 
 </tr>
@@ -111,68 +150,100 @@ function infoTable() {
   </tr>
 
   <tr>
-    <td>Categories</td>
-    <td>Revenues</td>
-    <td>Percentage</td>
+    <td class="estyleSub">Categories</td>
+    <td class="estyleSub">Revenues</td>
+    <td class="estyleSub">Percentage</td>
   </tr>
 
   <tr>
-    <td>${maxEstimate[0]}</td>
-    <td>.</td>
-    <td>.</td>
-  </tr>
-
-  <tr>
-    <td>${maxEstimate[1]}</td>
-    <td>.</td>
+    <td>${categorias[0]}</td>
+    <td>$${arraySumas[0]}</td>
     <td>.</td>
   </tr>
 
   <tr>
-    <td>${maxEstimate[2]}</td>
-    <td>.</td>
+    <td>${categorias[1]}</td>
+    <td>$${arraySumas[1]}</td>
     <td>.</td>
   </tr>
+
+  <tr>
+    <td>${categorias[2]}</td>
+    <td>$${arraySumas[2]}</td>
+    <td>.</td>
+  </tr>
+
+  <tr>
+  <td>${categorias[3]}</td>
+  <td>$${arraySumas[3]}</td>
+  <td>.</td>
+</tr>
+
+<tr>
+<td>${categorias[4]}</td>
+<td>$${arraySumas[4]}</td>
+<td>.</td>
+</tr>
+
+<tr>
+<td>${categorias[5]}</td>
+<td>$${arraySumas[5]}</td>
+<td>.</td>
+</tr>
+
+
 
   <tr>
     <th colspan="3">Past Events Statistics by category</th>
   </tr>
 
   <tr>
-    <td>Categories</td>
-    <td>Renueves</td>
-    <td>Percentage</td>
+    <td class="estyleSub">Categories</td>
+    <td class="estyleSub">Renueves</td>
+    <td class="estyleSub">Percentage</td>
   </tr>
 
   <tr>
-    <td>.</td>
-    <td>.</td>
-    <td>.</td>
-  </tr>
+  <td>${categorias[0]}</td>
+  <td>.</td>
+  <td>.</td>
+</tr>
 
-  <tr>
-    <td>.</td>
-    <td>.</td>
-    <td>.</td>
-  </tr>
+<tr>
+  <td>${categorias[1]}</td>
+  <td>.</td>
+  <td>.</td>
+</tr>
 
-  <tr>
-    <td>.</td>
-    <td>.</td>
-    <td>.</td>
-  </tr>
+<tr>
+  <td>${categorias[2]}</td>
+  <td>.</td>
+  <td>.</td>
+</tr>
 
-  <tr>
-    <td>.</td>
-    <td>.</td>
-    <td>.</td>
-  </tr>
+<tr>
+<td>${categorias[3]}</td>
+<td>.</td>
+<td>.</td>
+</tr>
 
-  <tr>
-    <td>.</td>
-    <td>.</td>
-    <td>.</td>
-  </tr>
+<tr>
+<td>${categorias[4]}</td>
+<td>.</td>
+<td>.</td>
+</tr>
+
+<tr>
+<td>${categorias[5]}</td>
+<td>.</td>
+<td>.</td>
+</tr>
+
+<tr>
+<td>${categorias[6]}</td>
+<td>.</td>
+<td>.</td>
+</tr>
 </tbody>
 </table>`
   
