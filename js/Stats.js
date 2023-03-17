@@ -18,8 +18,11 @@ fetch(totalData)
 let filtAsisPorcentaje = events.filter(filtAsisP => filtAsisP.assistance !== undefined).map(filtAsisP => {return{
   id: filtAsisP._id,
  name: filtAsisP.name,
+ category: filtAsisP.category,
  assistance: filtAsisP.assistance,
  capacity: filtAsisP.capacity,
+ price: filtAsisP.price,
+ total: filtAsisP.price * filtAsisP.assistance,
  percentage: Math.round((filtAsisP.assistance / filtAsisP.capacity ) * 100)
 
 }} )
@@ -42,8 +45,6 @@ const granCapacity = capacidadOrden.slice(-3)
 // console.log(granCapacity);
 
 
-
-
  //segunda tabla
 //FILTROS Y MAPEOS DE LOS EVENTOS CON "ESTIMATE"
 //Filtro los eventos con la una estimacion de asistencia
@@ -58,10 +59,7 @@ let estimateFilter = events.filter(esti => esti.estimate != undefined).map(estim
   percentage:(estimateFilter.estimate / estimateFilter.capacity ) * 100
 }} )
 
- console.log("todos los eventos futuros:", estimateFilter);
-
-
-
+//  console.log("todos los eventos futuros:", estimateFilter);
 
 
 //funcion para sumar los totales por categoria y aplicarlos a cada una
@@ -69,6 +67,7 @@ function sumaPorCategory(category) {
   let totalPorCategory=0
   let totalCapacidad=0
   let totalEstimate=0
+  let porcentajeDeEstimate=[]
 estimateFilter.forEach(event=> {if( event.category == category){
                             totalPorCategory +=  event.total
                             totalCapacidad += event.capacity
@@ -77,12 +76,16 @@ estimateFilter.forEach(event=> {if( event.category == category){
 
 }
 });
+
 let porcenTotalCate= ((totalEstimate / totalCapacidad) *100).toFixed(2)
-console.log(porcenTotalCate);
+// console.log(porcenTotalCate);
 
-return totalPorCategory  
+porcentajeDeEstimate.push(totalPorCategory)
+porcentajeDeEstimate.push(porcenTotalCate)
+
+
+return porcentajeDeEstimate  
 }
-
 
 let arraySumas=[]
 function sumaTodasCate() {
@@ -94,18 +97,67 @@ function sumaTodasCate() {
 
 //mapeo las categorias de todos los eventos y saco las repetidas
   let mapCategorias = estimateFilter.map((cat) => cat.category)
-  console.log(mapCategorias);
+  // console.log(mapCategorias);
   const categorias = mapCategorias.filter(
     (item, index) => mapCategorias.indexOf(item) == index
   )
-      console.log(categorias);
+      // console.log(categorias);
 
 sumaTodasCate()
-console.log("suma de array", arraySumas);
-console.log("estee", categorias);
+// console.log("suma de array", arraySumas);
+// console.log("estee", categorias);
 
 
 
+
+//***************************tercer tabla eventos asistidos***************************************
+
+
+//funcion para sumar los totales por categorias asistida y aplicarlos a cada una
+function sumaPorCateAsis(cate) {
+  let totalPorCategoryAsis=0
+  let totalCapacidadAsis=0
+  let totalAsistencia=0
+  let porcentajeDeAsis=[]
+filtAsisPorcentaje.forEach(e=> {if( e.category == cate){
+                            totalPorCategoryAsis +=  e.total
+                            totalCapacidadAsis += e.capacity
+                            totalAsistencia += e.assistance
+                            // console.log(totalPorCategoryAsis);
+
+}
+});
+
+let porcenTotalCateAsis= ((totalAsistencia / totalCapacidadAsis) *100).toFixed(2)
+console.log(porcenTotalCateAsis);
+
+porcentajeDeAsis.push(totalPorCategoryAsis)
+porcentajeDeAsis.push(porcenTotalCateAsis)
+
+
+return porcentajeDeAsis  
+}
+
+let arraySumasAsis=[]
+function sumaTodasCateAsisti() {
+  categoriasAsis.forEach(cate => { 
+    arraySumasAsis.push(sumaPorCateAsis(cate))
+    console.log(arraySumasAsis);
+
+  })
+}
+
+//mapeo las categorias de los eventos asistidos y saco las repetidas
+  let mapCategoriasAsis = filtAsisPorcentaje.map((category) => category.category
+  )
+  console.log(mapCategoriasAsis);
+  const categoriasAsis = mapCategoriasAsis.filter(
+    (item, index) => mapCategoriasAsis.indexOf(item) == index
+
+  )
+  console.log(categoriasAsis);
+
+sumaTodasCateAsisti()
 
 
 
@@ -138,8 +190,6 @@ function infoTable() {
 <td>${tresUltimos[2]}</td>
 <td>${granCapacity[0]}</td>
 
-<td>.</td>
-
 </tr>
 
   <tr>
@@ -154,38 +204,38 @@ function infoTable() {
 
   <tr>
     <td>${categorias[0]}</td>
-    <td>$${arraySumas[0]}</td>
-    <td>.</td>
+    <td>$${arraySumas[0][0]}</td>
+    <td>${arraySumas[0][1]}%</td>
   </tr>
 
   <tr>
     <td>${categorias[1]}</td>
-    <td>$${arraySumas[1]}</td>
-    <td>.</td>
+    <td>$${arraySumas[1][0]}</td>
+    <td>${arraySumas[1][1]}%</td>
   </tr>
 
   <tr>
     <td>${categorias[2]}</td>
-    <td>$${arraySumas[2]}</td>
-    <td>.</td>
+    <td>$${arraySumas[2][0]}</td>
+    <td>${arraySumas[2][1]}%</td>
   </tr>
 
   <tr>
   <td>${categorias[3]}</td>
-  <td>$${arraySumas[3]}</td>
-  <td>.</td>
+  <td>$${arraySumas[3][0]}</td>
+  <td>${arraySumas[3][1]}%</td>
 </tr>
 
 <tr>
 <td>${categorias[4]}</td>
-<td>$${arraySumas[4]}</td>
-<td>.</td>
+<td>$${arraySumas[4][0]}</td>
+<td>${arraySumas[4][1]}%</td>
 </tr>
 
 <tr>
 <td>${categorias[5]}</td>
-<td>$${arraySumas[5]}</td>
-<td>.</td>
+<td>$${arraySumas[5][0]}</td>
+<td>${arraySumas[5][1]}%</td>
 </tr>
 
 
@@ -201,46 +251,48 @@ function infoTable() {
   </tr>
 
   <tr>
-  <td>${categorias[0]}</td>
-  <td>.</td>
-  <td>.</td>
+  <td>${categoriasAsis[0]}</td>
+  <td>$${arraySumasAsis[0][0]}</td>
+  <td>${arraySumasAsis[0][1]}%</td>
 </tr>
 
 <tr>
-  <td>${categorias[1]}</td>
-  <td>.</td>
-  <td>.</td>
+  <td>${categoriasAsis[1]}</td>
+  <td>$${arraySumasAsis[1][0]}</td>
+  <td>${arraySumasAsis[1][1]}%</td>
 </tr>
 
 <tr>
-  <td>${categorias[2]}</td>
-  <td>.</td>
-  <td>.</td>
+  <td>${categoriasAsis[2]}</td>
+  <td>$${arraySumasAsis[2][0]}</td>
+  <td>${arraySumasAsis[2][1]}%</td>
 </tr>
 
 <tr>
-<td>${categorias[3]}</td>
-<td>.</td>
-<td>.</td>
+<td>${categoriasAsis[3]}</td>
+<td>$${arraySumasAsis[3][0]}</td>
+<td>${arraySumasAsis[3][1]}%</td>
 </tr>
 
 <tr>
-<td>${categorias[4]}</td>
-<td>.</td>
-<td>.</td>
+<td>${categoriasAsis[4]}</td>
+<td>$${arraySumasAsis[4][0]}</td>
+<td>${arraySumasAsis[4][1]}%</td>
 </tr>
 
 <tr>
-<td>${categorias[5]}</td>
-<td>.</td>
-<td>.</td>
+<td>${categoriasAsis[5]}</td>
+<td>$${arraySumasAsis[5][0]}</td>
+<td>${arraySumasAsis[5][1]}%</td>
 </tr>
 
 <tr>
-<td>${categorias[6]}</td>
-<td>.</td>
-<td>.</td>
+<td>${categoriasAsis[6]}</td>
+<td>$${arraySumasAsis[6][0]}</td>
+<td>${arraySumasAsis[6][1]}%</td>
 </tr>
+
+
 </tbody>
 </table>`
   
@@ -248,20 +300,6 @@ return containerTable.innerHTML
 }
 
 infoTable()
-
-
-
-
-
-
-
-//mapeo la capacidad de todos los eventos
-let mapCapacidad = events.map((cap) => cap.capacity)
-// console.log("capacidad de todos los eventos:", mapCapacidad);
-
-
-
-
 
 
 
