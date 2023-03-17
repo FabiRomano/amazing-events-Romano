@@ -1,8 +1,19 @@
+let totalData='https://mindhub-xj03.onrender.com/api/amazing'
+const containerTable = document.getElementById ("containerTable")
+
+fetch(totalData)
+.then(response => response.json())
+.then(datos => {     
+  let totalData = datos    
+  const currentDate = totalData.currentDate
+  const events = datos.events
+
+
 const queryString = location.search
 const params = new URLSearchParams(queryString)
 const id = params.get('id')
 
-let cards = dataCards.events.find(data => data._id == id)
+let cards = totalData.events.find(data => data._id == id)
 
 const ContenedorDetails = document.getElementById('ContenedorDetails')
 
@@ -31,3 +42,4 @@ console.log(cards)
 console.log(cards._id)
 
 
+})

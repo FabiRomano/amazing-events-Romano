@@ -9,9 +9,9 @@ fetch(totalData)
   const events = datos.events
 
 
-console.log(events);  
-console.log(currentDate); 
-console.log(totalData);
+// console.log(events);  
+// console.log(currentDate); 
+// console.log(totalData);
 
 //FILTROS Y MAPEOS DE LOS EVENTOS CON "ASSISTANCE"
 //filtro los eventos con asistencia y saco porcentajes
@@ -28,18 +28,18 @@ console.log("todos los eventos ya asistidos y sus porcentajes:", filtAsisPorcent
     // Primera tabla
     // Esta constante ordena de mayor a menor porcentaje y guarda solo los datos utiles
     const ordenAsis = filtAsisPorcentaje.sort((a,b) => b.percentage - a.percentage).map(filtAsisP => {return `${filtAsisP.name}: ${filtAsisP.percentage}%`})
-console.log(ordenAsis);
+// console.log(ordenAsis);
 
    // Esta constante toma solo los ultimos 3 eventos
     const tresUltimos = ordenAsis.slice(-3)
-console.log(tresUltimos);
+// console.log(tresUltimos);
 
     // Esta constante ordena de mayor a menor segun la capacidad
     const capacidadOrden = events.sort((a,b) => a.capacity - b.capacity).map(filtAsisP => {return `${filtAsisP.name}: ${filtAsisP.capacity}`})
-console.log(capacidadOrden);
+// console.log(capacidadOrden);
 
 const granCapacity = capacidadOrden.slice(-3)
-console.log(granCapacity);
+// console.log(granCapacity);
 
 
 
@@ -55,41 +55,42 @@ let estimateFilter = events.filter(esti => esti.estimate != undefined).map(estim
   capacity: estimateFilter.capacity,
   price: estimateFilter.price,
   total: estimateFilter.price * estimateFilter.estimate,
-  percentage: Math.round((estimateFilter.estimate / estimateFilter.capacity ) * 100)
+  percentage:(estimateFilter.estimate / estimateFilter.capacity ) * 100
 }} )
 
  console.log("todos los eventos futuros:", estimateFilter);
 
 
 
-// let totalPorCategory=0
-// estimateFilter.forEach(event=> {if( event.category == "Museum"){
-//                             totalPorCategory +=  event.total
-//                             console.log(totalPorCategory);
 
-// }
-// });
 
+//funcion para sumar los totales por categoria y aplicarlos a cada una
 function sumaPorCategory(category) {
   let totalPorCategory=0
+  let totalCapacidad=0
+  let totalEstimate=0
 estimateFilter.forEach(event=> {if( event.category == category){
                             totalPorCategory +=  event.total
-                            console.log(totalPorCategory);
+                            totalCapacidad += event.capacity
+                            totalEstimate += event.estimate
+                            // console.log(totalPorCategory);
 
 }
 });
+let porcenTotalCate= ((totalEstimate / totalCapacidad) *100).toFixed(2)
+console.log(porcenTotalCate);
+
 return totalPorCategory  
 }
 
-let arraySumas=[]
 
+let arraySumas=[]
 function sumaTodasCate() {
   categorias.forEach(categoria => { 
     arraySumas.push(sumaPorCategory(categoria))
   })
   
 }
-
 
 //mapeo las categorias de todos los eventos y saco las repetidas
   let mapCategorias = estimateFilter.map((cat) => cat.category)
@@ -103,10 +104,6 @@ sumaTodasCate()
 console.log("suma de array", arraySumas);
 console.log("estee", categorias);
 
-
-  // Esta constante ordena de mayor a menor porcentaje y guarda solo los datos utiles
-  const catPreciEstimate = estimateFilter.sort((a,b) => a.estimate - b.estimate).map(estimateFilter => {return `${estimateFilter.category}: ${estimateFilter.price}$`})
-  console.log(catPreciEstimate);
 
 
 
@@ -260,7 +257,7 @@ infoTable()
 
 //mapeo la capacidad de todos los eventos
 let mapCapacidad = events.map((cap) => cap.capacity)
-console.log("capacidad de todos los eventos:", mapCapacidad);
+// console.log("capacidad de todos los eventos:", mapCapacidad);
 
 
 
