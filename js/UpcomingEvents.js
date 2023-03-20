@@ -18,7 +18,7 @@ let buscador = document.getElementById("buscador")
     for (const event of data) {
         if (event.date >= currentDate) {
   
-            tarjeta +=`<div class="card">
+            tarjeta +=`<div class="card cardDark">
             <img
               src="${event.image}"
               class="card-img-top imagen-card"
@@ -140,5 +140,105 @@ console.log(buscadorControl);
 
 
 searchCards()
+
+
+//***************modo oscuro******************
+
+const btnModoOscuro=document.getElementById("btnModoOscuro");
+const mOscuroBody=document.getElementById("mOscuroBody");
+const mOscuroContainer=document.getElementById("mOscuroContainer");
+const mOscuroHeader=document.getElementById("mOscuroHeader");
+const cardDark=document.querySelectorAll(".cardDark")
+const navDark=document.querySelectorAll(".navDark")
+const iconDark=document.querySelectorAll(".iconDark")
+console.log(cardDark);
+
+
+
+loadMDark()
+loadCardsDark()
+loadNavDark()
+loadIconDark()
+
+
+btnModoOscuro.addEventListener("click", () => {
+  mOscuroBody.classList.toggle("modeDark")
+  mOscuroContainer.classList.toggle("modeDark")
+  mOscuroHeader.classList.toggle("modeDark")
+  cardDark.forEach(card => {card.classList.toggle("cardDark")
+})
+navDark.forEach(nav => {nav.classList.toggle("navDark")
+})
+  iconDark.forEach(icon => {icon.classList.toggle("iconDark")
+})
+
+storeMDark(mOscuroBody.classList.contains("modeDark"))
+storeMDark(cardDark.classList.contains("cardDark"))
+storeMDark(navDark.classList.contains("navDark"))
+storeMDark(iconDark.classList.contains("iconDark"))
+
+})
+
+
+function loadMDark() {
+    let modeDark = localStorage.getItem("modeDark");
+    console.log(modeDark);
+    if(!modeDark) {
+        storeMDark("false")
+    } else if(modeDark == "true"){
+        mOscuroBody.classList.add("modeDark") 
+        mOscuroContainer.classList.add("modeDark")
+        mOscuroHeader.classList.add("modeDark")
+    
+    }
+}
+
+function loadCardsDark(){
+    if (!cardDark) {
+        storeMDark("false")
+  
+    }else if(cardDark == "true"){
+         cardDark.forEach(card => {card.classList.add("cardDark")
+      })
+    }
+}
+
+
+function loadNavDark() {
+  if (!navDark) {
+    storeMDark("false")
+    
+  }else if(navDark == "true"){
+         navDark.forEach(nav => {nav.classList.add("navDark")
+      })
+  }
+  
+}
+
+function loadIconDark() {
+  if (!iconDark) {
+    storeMDark("false")
+    
+  }else if(iconDark == "true"){
+         iconDark.forEach(icon => {icon.classList.add("iconDark")
+      }) 
+  }
+  
+}
+
+
+function storeMDark(value) {
+    localStorage.setItem("modeDark", value)
+    localStorage.setItem("cardDark", value)
+    localStorage.setItem("navDark", value)
+    localStorage.setItem("iconDark", value)
+}
+
+
+
+
+localStorage.clear()
+
+
 
 })

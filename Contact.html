@@ -15,26 +15,37 @@
     <link rel="stylesheet" href="./assest/style.css">
     <title>Contact</title>
   </head>
-  <body>
-    <header>
-      <div class="flex-container">
+  <body id="mOscuroBody">
+    <header id="mOscuroHeader">
+      <div class="flex-container" id="mOscuroContainer">
         <img src="./assest/img/LogoAmazingEvents.png" alt="logo" class="logo">
 <nav>
         <ul class="nav nav">
+
           <li class="nav-item">
-            <a href="./index.html" class="nav-link active link-danger nav-style" aria-current="page"
+            <a
+              href="#"
+              class="nav-link active link-danger nav-style navDark"
+              id="btnModoOscuro"
+              aria-current="page"
+              >Dark Mode</a
+            >
+          </li>
+
+          <li class="nav-item">
+            <a href="./index.html" class="nav-link active link-danger nav-style navDark" aria-current="page"
               >Home</a
             >
           </li>
           <li class="nav-item">
-            <a href="./UpcomingEvents.html" class="nav-link link-danger nav-style">Upcoming Events</a>
+            <a href="./UpcomingEvents.html" class="nav-link link-danger nav-style navDark">Upcoming Events</a>
           </li>
           <li class="nav-item">
-            <a href="./PastEvents.html" class="nav-link link-danger nav-style">Past Events</a>
+            <a href="./PastEvents.html" class="nav-link link-danger nav-style navDark">Past Events</a>
           </li>
-          <li class="nav-item"><a href="#" class="nav-link link-danger nav-style">Contact</a></li>
+          <li class="nav-item"><a href="#" class="nav-link link-danger nav-style navDark">Contact</a></li>
           <li class="nav-item">
-            <a href="./Stats.html" class="nav-link link-danger nav-style">Stats</a>
+            <a href="./Stats.html" class="nav-link link-danger nav-style navDark">Stats</a>
           </li>
         </ul>
       </nav>
@@ -54,16 +65,16 @@
   <section class="formulario">
     <h4>nada</h4>
 <form class="form-contact">
-    <div class="mb-3 labelPEr ">
+    <div class="mb-3 labelPEr labelDark">
       <label for="name" class="form-label">Name:</label>
       <input type="text" class="form-control" id="name">
     </div>
 
-    <div class="mb-3 labelPEr">
+    <div class="mb-3 labelPEr labelDark">
       <label for="email" class="form-label">Email:</label>
       <input type="email" class="form-control" id="email" placeholder="name@example.com">
     </div>
-    <div class="mb-3 labelPEr">
+    <div class="mb-3 labelPEr labelDark">
       <label for="mesagge" class="form-label">Mesagge:</label>
       <textarea class="form-control" id="mesagge" rows="3"></textarea>
     </div>
@@ -90,7 +101,7 @@ class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 bor
       href="https://www.instagram.com/fabiromano22/"
       target="_blank"
       rel="noreferrer noopener"
-      ><i class="fa-brands fa-square-instagram estiloIcon"></i></a>
+      ><i class="fa-brands fa-square-instagram estiloIcon iconDark"></i></a>
     
   </li>
   <li class="ms-3">
@@ -99,7 +110,7 @@ class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 bor
       href="https://www.facebook.com/fabi.romano47/"
       target="_blank"
       rel="noreferrer noopener"
-      ><i class="fa-brands fa-square-facebook estiloIcon"></i></a
+      ><i class="fa-brands fa-square-facebook estiloIcon iconDark"></i></a
     >
   </li>
   <li class="ms-3">
@@ -108,11 +119,13 @@ class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 bor
       href="https://wa.me/1134106136?text="
       target="_blank"
       rel="noreferrer noopener"
-      ><i class="fa-brands fa-square-whatsapp estiloIcon"></i
+      ><i class="fa-brands fa-square-whatsapp estiloIcon iconDark"></i
     ></a>
   </li>
 </ul>
 </footer>
+
+<script src="./js/contact.js"></script>
 
 <script src="https://kit.fontawesome.com/3240aad9c2.js" crossorigin="anonymous"></script>
 

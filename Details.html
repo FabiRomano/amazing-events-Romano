@@ -24,35 +24,46 @@
     <title>Amazing Events</title>
   </head>
 
-  <body>
-    <header>
-      <div class="flex-container">
+  <body id="mOscuroBody">
+    <header id="mOscuroHeader">
+      <div class="flex-container" id="mOscuroContainer">
         <img src="./assest/img/LogoAmazingEvents.png" alt="logo" class="logo">
         <nav>
           <ul class="nav nav">
             <li class="nav-item">
               <a
+                href="#"
+                class="nav-link active link-danger nav-style navDark"
+                id="btnModoOscuro"
+                aria-current="page"
+                >Dark Mode</a
+              >
+            </li>
+
+
+            <li class="nav-item">
+              <a
                 href="./index.html"
-                class="nav-link active link-danger nav-style"
+                class="nav-link active link-danger nav-style navDark"
                 aria-current="page"
                 >Home</a
               >
             </li>
             <li class="nav-item">
-              <a href="./UpcomingEvents.html" class="nav-link link-danger nav-style"
+              <a href="./UpcomingEvents.html" class="nav-link link-danger nav-style navDark"
                 >Upcoming Events</a
               >
             </li>
             <li class="nav-item">
-              <a href="./PastEvents.html" class="nav-link link-danger nav-style"
+              <a href="./PastEvents.html" class="nav-link link-danger nav-style navDark"
                 >Past Events</a
               >
             </li>
             <li class="nav-item">
-              <a href="./Contact.html" class="nav-link link-danger nav-style">Contact</a>
+              <a href="./Contact.html" class="nav-link link-danger nav-style navDark">Contact</a>
             </li>
             <li class="nav-item">
-              <a href="./Stats.html" class="nav-link link-danger nav-style">Stats</a>
+              <a href="./Stats.html" class="nav-link link-danger nav-style navDark">Stats</a>
             </li>
           </ul>
         </nav>
@@ -60,7 +71,7 @@
    
     </header>
     <main>
-      <section class="sec-details">
+      <section class="sec-details" id="mOscuroContainer" >
         <h4>nada</h4>
       
         <div class="container text-center">
@@ -86,7 +97,7 @@
             href="https://www.instagram.com/fabiromano22/"
             target="_blank"
             rel="noreferrer noopener"
-            ><i class="fa-brands fa-square-instagram estiloIcon"></i
+            ><i class="fa-brands fa-square-instagram estiloIcon iconDark"></i
           ></a>
         </li>
         <li class="ms-3">
@@ -95,7 +106,7 @@
             href="https://www.facebook.com/fabi.romano47/"
             target="_blank"
             rel="noreferrer noopener"
-            ><i class="fa-brands fa-square-facebook estiloIcon"></i
+            ><i class="fa-brands fa-square-facebook estiloIcon iconDark"></i
           ></a>
         </li>
         <li class="ms-3">
@@ -104,7 +115,7 @@
             href="https://wa.me/1134106136?text="
             target="_blank"
             rel="noreferrer noopener"
-            ><i class="fa-brands fa-square-whatsapp estiloIcon"></i
+            ><i class="fa-brands fa-square-whatsapp estiloIcon iconDark"></i
           ></a>
         </li>
       </ul>

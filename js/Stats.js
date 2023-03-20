@@ -9,10 +9,6 @@ fetch(totalData)
   const events = datos.events
 
 
-// console.log(events);  
-// console.log(currentDate); 
-// console.log(totalData);
-
 //FILTROS Y MAPEOS DE LOS EVENTOS CON "ASSISTANCE"
 //filtro los eventos con asistencia y saco porcentajes
 let filtAsisPorcentaje = events.filter(filtAsisP => filtAsisP.assistance !== undefined).map(filtAsisP => {return{
@@ -31,18 +27,14 @@ console.log("todos los eventos ya asistidos y sus porcentajes:", filtAsisPorcent
     // Primera tabla
     // Esta constante ordena de mayor a menor porcentaje y guarda solo los datos utiles
     const ordenAsis = filtAsisPorcentaje.sort((a,b) => b.percentage - a.percentage).map(filtAsisP => {return `${filtAsisP.name}: ${filtAsisP.percentage}%`})
-// console.log(ordenAsis);
 
    // Esta constante toma solo los ultimos 3 eventos
     const tresUltimos = ordenAsis.slice(-3)
-// console.log(tresUltimos);
 
     // Esta constante ordena de mayor a menor segun la capacidad
     const capacidadOrden = events.sort((a,b) => a.capacity - b.capacity).map(filtAsisP => {return `${filtAsisP.name}: ${filtAsisP.capacity}`})
-// console.log(capacidadOrden);
 
 const granCapacity = capacidadOrden.slice(-3)
-// console.log(granCapacity);
 
 
  //segunda tabla
@@ -72,13 +64,11 @@ estimateFilter.forEach(event=> {if( event.category == category){
                             totalPorCategory +=  event.total
                             totalCapacidad += event.capacity
                             totalEstimate += event.estimate
-                            // console.log(totalPorCategory);
 
 }
 });
 
 let porcenTotalCate= ((totalEstimate / totalCapacidad) *100).toFixed(2)
-// console.log(porcenTotalCate);
 
 porcentajeDeEstimate.push(totalPorCategory)
 porcentajeDeEstimate.push(porcenTotalCate)
@@ -101,11 +91,9 @@ function sumaTodasCate() {
   const categorias = mapCategorias.filter(
     (item, index) => mapCategorias.indexOf(item) == index
   )
-      // console.log(categorias);
 
 sumaTodasCate()
-// console.log("suma de array", arraySumas);
-// console.log("estee", categorias);
+
 
 
 
@@ -300,6 +288,88 @@ return containerTable.innerHTML
 }
 
 infoTable()
+
+
+
+
+//***************modo oscuro******************
+
+const btnModoOscuro=document.getElementById("btnModoOscuro");
+const mOscuroBody=document.getElementById("mOscuroBody");
+const mOscuroContainer=document.getElementById("mOscuroContainer");
+const mOscuroHeader=document.getElementById("mOscuroHeader");
+const navDark=document.querySelectorAll(".navDark")
+const iconDark=document.querySelectorAll(".iconDark")
+
+
+
+loadMDark()
+loadNavDark()
+loadIconDark()
+
+
+btnModoOscuro.addEventListener("click", () => {
+  mOscuroBody.classList.toggle("modeDark")
+  mOscuroContainer.classList.toggle("modeDark")
+  mOscuroHeader.classList.toggle("modeDark")
+navDark.forEach(nav => {nav.classList.toggle("navDark")
+})
+  iconDark.forEach(icon => {icon.classList.toggle("iconDark")
+})
+
+storeMDark(mOscuroBody.classList.contains("modeDark"))
+storeMDark(navDark.classList.contains("navDark"))
+storeMDark(iconDark.classList.contains("iconDark"))
+})
+
+
+function loadMDark() {
+    let modeDark = localStorage.getItem("modeDark");
+    console.log(modeDark);
+    if(!modeDark) {
+        storeMDark("false")
+    } else if(modeDark == "true"){
+        mOscuroBody.classList.add("modeDark") 
+        mOscuroContainer.classList.add("modeDark")
+        mOscuroHeader.classList.add("modeDark")
+    
+    }
+}
+
+
+function loadNavDark() {
+  if (!navDark) {
+    storeMDark("false")
+    
+ }else if(navDark == "true"){
+         navDark.forEach(nav => {nav.classList.add("navDark")
+      })
+ }
+  
+}
+
+function loadIconDark() {
+  if (!iconDark) {
+    storeMDark("false")
+    
+ }else if(iconDark == "true"){
+         iconDark.forEach(icon => {icon.classList.add("iconDark")
+      }) 
+  }
+  
+}
+
+
+function storeMDark(value) {
+    localStorage.setItem("modeDark", value)
+    localStorage.setItem("navDark", value)
+    localStorage.setItem("iconDark", value)
+}
+
+
+
+
+localStorage.clear()
 
 
 

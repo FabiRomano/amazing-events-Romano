@@ -9,12 +9,14 @@
 body
 {
     background-color: rgba(229, 230, 231, 0.979);
+    transition: 0.4s ease all;
 
 }
 
 header
 {
     background-color:rgb(240, 219, 219);
+    transition: 0.4s ease all;
 
 }
 
@@ -40,6 +42,9 @@ label{
     -webkit-box-shadow: 5px 0px 24px 10px rgba(222,25,25,0.81);
     -moz-box-shadow: 5px 0px 24px 10px rgba(222,25,25,0.81);
     box-shadow: 5px 0px 24px 10px rgba(222,25,25,0.81);
+    transition: 0.5s ease all;
+
+
 }
 
 
@@ -110,6 +115,8 @@ input
   
 }
 
+
+
 .buscador{
     
     height: 30px;
@@ -151,10 +158,12 @@ box-shadow: 3px 10px 5px 0px rgba(0,0,0,0.75);
     border-radius: 50%;
     font-size: 15px;
     background-color:rgb(240, 219, 219);
-    transition: transform .5s;
+    transition: transform 5s;
     -webkit-box-shadow: 3px 10px 5px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 3px 10px 5px 0px rgba(0,0,0,0.75);
     box-shadow: 3px 10px 5px 0px rgba(0,0,0,0.75);
+    transition: 0.5s ease all;
+
 
 }
 
@@ -194,6 +203,7 @@ font-family: cursive;
     -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     background-color:rgb(240, 219, 219);
+    transition: 0.5s ease all;
 
 }
 
@@ -239,6 +249,7 @@ font-family: cursive;
     bottom: 5rem;
     left: 80%;
 }
+
 .form-contact
 {
 display: flex;
@@ -593,3 +604,45 @@ h2 h5{
 }
 
 
+/* ****************modo oscuro**************** */
+
+.btn-m-oscuro{
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    right: 90%;
+    
+}
+
+.modeDark{
+    background-color: #000;
+}
+
+.cardDark{
+    background-color: #000;
+    -webkit-box-shadow: 5px 0px 24px 10px rgba(222,25,25,0.81);
+    -moz-box-shadow: 5px 0px 24px 10px rgba(222,25,25,0.81);
+    box-shadow: 5px 0px 24px 10px rgba(222,25,25,0.81);
+    
+}
+
+.navDark{
+    -webkit-box-shadow: 2px 0px 14px 5px rgba(222,25,25,0.81);
+    -moz-box-shadow: 2px 0px 14px 5px rgba(222,25,25,0.81);
+    box-shadow: 2px 0px 14px 5px rgba(222,25,25,0.81);
+}
+
+.iconDark{
+    -webkit-box-shadow: 2px 0px 14px 5px rgba(222,25,25,0.81);
+    -moz-box-shadow: 2px 0px 14px 5px rgba(222,25,25,0.81);
+    box-shadow: 2px 0px 14px 5px rgba(222,25,25,0.81);
+}
+
+
+.labelDark{
+    background-color: #000;
+}
+
+.contDark{
+  background-color: #000;
+}
