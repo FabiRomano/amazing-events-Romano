@@ -66,6 +66,7 @@ loadMDark()
         
       }
 loadNavDark()
+
       function loadIconDark() {
         if (!iconDark) {
           storeMDark("false")
