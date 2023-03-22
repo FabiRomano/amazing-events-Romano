@@ -118,9 +118,9 @@ input
 
 
 .buscador{
-    
+    position: relative;
+    right: 5rem;
     height: 30px;
-    left: 55px;
     width: 90%;
     border: solid 2px #f12d5e;
     box-shadow: 3px 0px 18px 8px rgba(222,25,25,0.81);

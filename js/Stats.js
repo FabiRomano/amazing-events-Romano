@@ -22,7 +22,6 @@ let filtAsisPorcentaje = events.filter(filtAsisP => filtAsisP.assistance !== und
  percentage: Math.round((filtAsisP.assistance / filtAsisP.capacity ) * 100)
 
 }} )
-console.log("todos los eventos ya asistidos y sus porcentajes:", filtAsisPorcentaje);
      
     // Primera tabla
     // Esta constante ordena de mayor a menor porcentaje y guarda solo los datos utiles
@@ -32,7 +31,7 @@ console.log("todos los eventos ya asistidos y sus porcentajes:", filtAsisPorcent
     const tresUltimos = ordenAsis.slice(-3)
 
     // Esta constante ordena de mayor a menor segun la capacidad
-    const capacidadOrden = events.sort((a,b) => a.capacity - b.capacity).map(filtAsisP => {return `${filtAsisP.name}: ${filtAsisP.capacity}`})
+    const capacidadOrden = filtAsisPorcentaje.sort((a,b) => a.capacity - b.capacity).map(filtAsisP => {return `${filtAsisP.name}: ${filtAsisP.capacity}`})
 
 const granCapacity = capacidadOrden.slice(-3)
 
@@ -85,7 +84,7 @@ function sumaTodasCate() {
   
 }
 
-//mapeo las categorias de todos los eventos y saco las repetidas
+//mapeo las categorias delos eventos futuros y saco las repetidas
   let mapCategorias = estimateFilter.map((cat) => cat.category)
   // console.log(mapCategorias);
   const categorias = mapCategorias.filter(
@@ -148,7 +147,7 @@ function sumaTodasCateAsisti() {
 sumaTodasCateAsisti()
 
 
-
+// ******************tabla*******************
 function infoTable() {
   containerTable.innerHTML=`<thead>
   <tr>
